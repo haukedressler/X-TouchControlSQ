@@ -1,5 +1,21 @@
 [
  {
+  "version": "0.12.2",
+  "date": "2026-11-26",
+  "de": {
+   "title": "Pegel-LEDs korrigiert",
+   "items": [
+    "Das X-Touch zeigte zu wenige Pegel-LEDs: es rechnet den Pegelwert in einer anderen Skala um (0–12 für 8 LEDs). Jetzt leuchten so viele LEDs wie berechnet – bei 0 dB am Pult 6 (erste gelbe), bei +6 dB 7, ab +12 dB alle."
+   ]
+  },
+  "en": {
+   "title": "Meter LEDs corrected",
+   "items": [
+    "The X-Touch showed too few meter LEDs: it converts the level value on a different scale (0–12 for 8 LEDs). Now as many LEDs light as calculated – at 0 dB on the console 6 (first yellow), at +6 dB 7, from +12 dB all."
+   ]
+  }
+ },
+ {
   "version": "0.12.1",
   "date": "2026-11-26",
   "de": {
