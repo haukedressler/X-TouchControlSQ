@@ -1,5 +1,21 @@
 [
  {
+  "version": "0.12.6",
+  "date": "2026-11-26",
+  "de": {
+   "title": "REC-Reglerfunktionen sichtbar",
+   "items": [
+    "Tastenbelegung › Kanaltasten: Bei „Alle Züge“ stehen jetzt die Reglerfunktionen aller Kanalarten zum Ankreuzen – also was REC je Kanalart durchschaltet (Eingang: Gain, Pan, HPF, Trim)."
+   ]
+  },
+  "en": {
+   "title": "REC knob functions visible",
+   "items": [
+    "Key assignment › Channel keys: with “All strips” the knob functions of all channel types can now be ticked directly – i.e. what REC steps through per channel type (input: gain, pan, HPF, trim)."
+   ]
+  }
+ },
+ {
   "version": "0.12.5",
   "date": "2026-11-26",
   "de": {
