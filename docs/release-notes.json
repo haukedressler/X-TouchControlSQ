@@ -1,5 +1,23 @@
 [
  {
+  "version": "0.13.1",
+  "date": "2026-11-26",
+  "de": {
+   "title": "EQ: Bell/Shelf",
+   "items": [
+    "EQ: Frequenz-Regler von LF bzw. HF gedrückt halten und drehen schaltet die Bandform zwischen Bell und Shelf um; oben im Display steht die Form dauerhaft („LF Bell“, „HF Shlf“).",
+    "Gilt auch für Gruppen, Aux, Matrix und LR."
+   ]
+  },
+  "en": {
+   "title": "EQ: bell/shelf",
+   "items": [
+    "EQ: hold the LF or HF frequency knob pushed and turn to switch the band shape between bell and shelf; the upper display line shows the shape permanently (“LF Bell”, “HF Shlf”).",
+    "Also for groups, aux, matrix and LR."
+   ]
+  }
+ },
+ {
   "version": "0.13.0",
   "date": "2026-11-26",
   "de": {

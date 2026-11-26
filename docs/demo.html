@@ -62,7 +62,7 @@ const LAYERS = [
 	{ note: 69, code: "U1", kind: "input", ch: [["Kick", C.RED], ["Snare", C.RED], ["Reverb", C.MAGENTA], ["Delay", C.MAGENTA], ["MonL", C.CYAN], ["Vox", C.YELLOW], ["Mtx 1", C.MAGENTA], ["LR", C.YELLOW]] }
 ];
 const FNS = { input: ["Gain", "Pan", "HPF", "Trim"], fxreturn: ["Pan"], group: ["Pan"], aux: ["Pan"], matrix: ["Pan"], dca: [], fxsend: [] };
-const EQ1 = ["LF Gain", "LF Hz", "LM Gain", "LM Hz", "HM Gain", "HM Hz", "HF Gain", "HF Hz"], EQ1V = ["+3.0dB", "80Hz", "-2.5dB", "350Hz", "+1.5dB", "2.20k", "+4.0dB", "9.50k"];
+const EQ1 = ["LF Gain", "LF Bell", "LM Gain", "LM Hz", "HM Gain", "HM Hz", "HF Gain", "HF Shlf"], EQ1V = ["+3.0dB", "80Hz", "-2.5dB", "350Hz", "+1.5dB", "2.20k", "+4.0dB", "9.50k"];
 const GA = ["Thresh", "Depth", "Attack", "Hold", "Release", "Key HP", "Key On", ""], GAV = ["-38dB", "+20dB", "2.00ms", "50.0ms", "180ms", "120Hz", "OFF", ""];
 const CO = ["Thresh", "Ratio", "Attack", "Release", "Knee", "Gain", "Detect", ""], COV = ["-18dB", "3:1", "10.0ms", "120ms", "SOFT", "+3.0dB", "RMS", ""];
 const FXP = ["Predlay", "DecayTm", "HFDecay", "HFSlope", "LF Cut", "HF Cut", "", ""], FXV = ["10ms", "2.94s", "6.04k", "2.1", "400Hz", "7.10k", "", ""];
@@ -130,7 +130,7 @@ function nowPanel() {
 	else if (S.mode === "mix") { const f = [...new Set(vis().filter(Boolean).map(fnOf).filter(Boolean))]; title = `Mix · Regler = ${f.join(" / ") || "–"}`; knobs = "Funktion je Zug (unten im Display)"; keys = ["REC = Reglerfunktion dieses Zuges weiter (SHIFT + REC zurück)", "Regler drücken = Standardwert bzw. umschalten", "Display unten: Funktion, beim Drehen kurz der Wert, beim Fader kurz die dB", "Modi: Gain/Trim, Pan, EQ, Gate/Comp, FX", "F1–F8 = Sends auf Fader (SHIFT = 2. Belegung)", "USER = eigene Ebenen 1–4"]; }
 	else if (S.mode === "track") { title = S.block ? "TRACK · Trim (TR)" : "TRACK · Gain (GN)"; knobs = S.block ? "Trim der 8 Kanäle" : "Gain der 8 Kanäle"; keys = S.block ? ["TRACK nochmal = zurück zu Mix"] : ["WRITE = Pad (gewählter Kanal)", "ALT + GROUP 1 s = 48V (gewählter Kanal)", "TRACK nochmal = Trim"]; }
 	else if (S.mode === "pan") { title = "PAN"; knobs = "Pan des Kanals"; keys = ["PAN nochmal = zurück zu Mix"]; }
-	else if (S.mode === "eq") { title = "EQ (gewählter Kanal)"; knobs = EQ1.join(", "); keys = ["Gain-Regler gedrückt halten + drehen = Güte (Q) des Bandes", "Gain-Regler kurz drücken = 0 dB", "READ = EQ an/aus", "WRITE = HPF an/aus", "TRIM + ALT = alle EQ-Gains 0 dB", "EQ nochmal = zurück zu Mix"]; }
+	else if (S.mode === "eq") { title = "EQ (gewählter Kanal)"; knobs = EQ1.join(", "); keys = ["Gain-Regler gedrückt halten + drehen = Güte (Q) des Bandes", "LF-/HF-Frequenz gedrückt halten + drehen = Bell/Shelf", "Gain-Regler kurz drücken = 0 dB", "READ = EQ an/aus", "WRITE = HPF an/aus", "TRIM + ALT = alle EQ-Gains 0 dB", "EQ nochmal = zurück zu Mix"]; }
 	else if (S.mode === "plugin") { title = `${S.block ? "PLUG-IN · Compressor" : "PLUG-IN · Gate"} (gewählter Kanal)`; knobs = (S.block ? CO : GA).filter(Boolean).join(", "); keys = S.block ? ["READ = Comp an/aus", "PLUG-IN nochmal = zurück zu Mix"] : ["READ = Gate an/aus", "PLUG-IN nochmal = Compressor"]; }
 	else { title = `INST · FX ${S.fx + 1}`; knobs = FXP.filter(Boolean).join(", "); keys = [S.fx < 3 ? `INST nochmal = FX ${S.fx + 2}` : "INST nochmal = FX – zurück zu Mix", "SHIFT + F1–F4 = FX direkt wählen"]; }
 	keys = [...keys, "CANCEL = zurück zu Mix"];
