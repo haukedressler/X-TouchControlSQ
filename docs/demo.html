@@ -3,193 +3,216 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>X-Touch Bedienung</title>
+<title>X-Touch Bedienung ausprobieren</title>
 <style>
-:root{
-  /* Layout: Hinweisleiste oben, darunter das X-Touch als anklickbare Zeichnung */
-  --bg:#f3f2ee; --card:#ffffff; --ink:#1d1d1f; --muted:#5d5d63; --line:#d9d7d0; --accent:#b8730f; --chip:#ebe9e2; --chipOn:#1d1d1f; --chipInk:#ffffff;
-  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",system-ui,sans-serif; --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
-}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#17181b; --card:#212226; --ink:#ececee; --muted:#a3a3aa; --line:#33343a; --accent:#ef9f27; --chip:#2b2c31; --chipOn:#ececee; --chipInk:#17181b; color-scheme:dark;}}
-:root[data-theme="dark"]{
-  --bg:#17181b; --card:#212226; --ink:#ececee; --muted:#a3a3aa; --line:#33343a; --accent:#ef9f27; --chip:#2b2c31; --chipOn:#ececee; --chipInk:#17181b; color-scheme:dark;}
-*{box-sizing:border-box}
-html,body{margin:0}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.5;padding:20px 16px 40px}
-h1{font-size:22px;font-weight:600;margin:0 0 4px;text-wrap:balance}
-p.lead{margin:0 0 14px;color:var(--muted);max-width:75ch}
-.top{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:14px;margin-bottom:14px}
-@media (max-width:820px){.top{grid-template-columns:1fr}}
-.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
-.card h2{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 8px;font-weight:600}
-#now .title{font-size:19px;font-weight:600;margin:0 0 8px}
-#now dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:4px 12px}
-#now dt{color:var(--muted);font-size:13px;padding-top:2px}
-#now dd{margin:0}
-#now ul{margin:0;padding-left:18px}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chips button{font:inherit;font-size:14px;background:var(--chip);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:6px 12px;cursor:pointer}
+:root{--bg:#f3f2ee;--card:#fff;--ink:#1d1d1f;--muted:#5d5d63;--line:#d9d7d0;--accent:#b8730f;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",system-ui,sans-serif;--mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace}
+@media (prefers-color-scheme:dark){:root{--bg:#17181b;--card:#212226;--ink:#ececee;--muted:#a3a3aa;--line:#33343a;--accent:#ef9f27;color-scheme:dark}}
+*{box-sizing:border-box}html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:14px/1.45 var(--sans);padding:14px}
+h1{font-size:19px;margin:0 0 2px}.lead{color:var(--muted);margin:0 0 10px;max-width:90ch}
+.wrap{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:12px}
+@media (max-width:980px){.wrap{grid-template-columns:1fr}}
+.xt{background:#1b1c1f;border:1px solid #2c2d31;border-radius:10px;padding:6px}
+.xt svg{width:100%;height:auto;display:block}.xt text{font-family:var(--sans)}.xt .mono{font-family:var(--mono)}
+.clk{cursor:pointer}.clk:hover rect,.clk:hover circle{stroke:#ffb347}
+.blink{animation:bl 1s steps(1) infinite}@keyframes bl{50%{opacity:.35}}
+.side{display:flex;flex-direction:column;gap:12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.card h2{font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 6px;font-weight:600}
+.title{font-size:16px;font-weight:600;margin:0 0 6px}
+dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:3px 10px;font-size:13px}dt{color:var(--muted)}dd{margin:0}
+ul{margin:6px 0 0;padding-left:18px;font-size:13px}li{margin:2px 0}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips button{font:inherit;font-size:13px;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:4px 11px;cursor:pointer}
 .chips button:hover{border-color:var(--accent)}
-.chips button:focus-visible,.clk:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.legend{margin-top:10px;font-size:13px;color:var(--muted)}
-.scroller{overflow-x:auto;border-radius:12px;border:1px solid var(--line);background:#1b1c1f}
-svg{display:block;min-width:1180px;width:100%;height:auto}
-.clk{cursor:pointer}
-.clk:hover rect{stroke:#ef9f27}
-text{font-family:var(--sans)}
-.mono{font-family:var(--mono)}
+#key .name{font-weight:600}#key .fn{color:var(--accent);font-weight:600}
+.hint{color:var(--muted);font-size:12.5px;margin:6px 0 0}
 </style>
 </head>
 <body>
 <h1>Bedienung ausprobieren</h1>
-<p class="lead">Übungsmodell mit Beispielwerten – klicke im Bild auf Tasten (TRACK, PAN, EQ, SEND, PLUG-IN, INST, F1–F8, SHIFT, CANCEL) und auf REC oder SELECT eines Kanalzugs. Das echte Gerät zeigt das Dashboard live.</p>
-
-<div class="top">
-  <section class="card" id="now" aria-live="polite"></section>
-  <section class="card">
-    <h2>Schnell ausprobieren</h2>
-    <div class="chips" id="chips"></div>
-    <p class="legend">Gelb leuchtend = Taste aktiv. Unter jedem Regler: ↓ = was Drücken bewirkt. Die Pegel-LEDs unter den Displays laufen immer mit dem Kanalpegel.</p>
-  </section>
+<p class="lead">Übungsmodell mit Beispielwerten: Taste anklicken, um zu sehen, was sie tut. Regler: Mausrad drehen, Klick = drücken. Das echte Gerät zeigt das Dashboard live.</p>
+<div class="wrap">
+  <div class="xt"><svg id="xt" viewBox="370 180 1630 1180" role="img" aria-label="X-Touch"></svg></div>
+  <div class="side">
+    <section class="card" id="key"><h2>Taste</h2><p class="hint">Taste in der Zeichnung anklicken.</p></section>
+    <section class="card" id="now"></section>
+    <section class="card"><h2>Schnell ausprobieren</h2><div class="chips" id="chips"></div></section>
+  </div>
 </div>
-
-<div class="scroller"><svg id="panel" viewBox="0 0 1300 592" role="img" aria-label="Schema des großen X-Touch mit acht Kanalzügen, Master-Fader und Tastenfeldern"></svg></div>
-
+<script src="xtouch-draw.js"></script>
 <script>
-// Sprache: ?lang=en lädt das Wörterbuch der App (/api/i18n); ohne Brücke bleibt die Seite deutsch.
-let I18N={lang:'de',exact:{},rules:[]},RULES=[];
-function t(s){if(I18N.lang!=='en'||s==null||s==='')return s;const h=I18N.exact[s];if(h!==undefined)return h;for(const[re,to]of RULES)if(re.test(s))return s.replace(re,to);return s;}
-function translateDom(){if(I18N.lang!=='en')return;document.documentElement.lang='en';
-  const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);for(let n=w.nextNode();n;n=w.nextNode()){if(n.parentElement?.closest('script,style,svg,#now'))continue;const k=n.nodeValue.trim();if(k){const x=t(k);if(x!==k)n.nodeValue=n.nodeValue.replace(k,x);}}
-  for(const el of document.querySelectorAll('[aria-label]')){const v=el.getAttribute('aria-label'),x=t(v);if(x!==v)el.setAttribute('aria-label',x);}
-  document.title=t(document.title);}
-const COL={teal:'#1D9E75',coral:'#D85A30',purple:'#7F77DD',amber:'#B8730F',blue:'#2F7FCB',gray:'#5F5E5A'};
-const CH=[['Kick','teal'],['Snare','teal'],['HiHat','teal'],['Tom 1','teal'],['Bass','coral'],['Gtr L','purple'],['Gtr R','purple'],['Keys','coral']];
-const LV=[.62,.55,.40,.50,.60,.45,.45,.50];
-const AUXN=['Drummer','Bass','Gitarre','Keys','Gesang','Chor','Mon 7','Mon 8','Aux 9','Aux 10','Aux 11','Aux 12'];
-const FXN=['Hall','Delay','Plate','Raum'];
-const SENDV=['-6.0dB','-12dB','aus','-3.5dB','-9.0dB','-inf','-15dB','-2.0dB'];
-const SENDL=[.55,.42,0,.62,.50,0,.36,.66];
-const rot=(a,n)=>a.map((_,i)=>a[(i+n)%a.length]);
-const E=(a,b)=>Array(8).fill(a).map((x,i)=>i<b?x:'');
-const B={
- eq1:{top:['LF Gain','LM Gain','HM Gain','HF Gain','LF Hz','LM Hz','HM Hz','HF Hz'],bot:['+3.0dB','-2.5dB','+1.5dB','+4.0dB','80Hz','350Hz','2.20k','9.50k'],push:['0 dB','0 dB','0 dB','0 dB','–','–','–','–']},
- eq2:{top:['LF Q','LM Q','HM Q','HF Q','HPF Hz','','',''],bot:['Q 0.80','Q 1.20','Q 1.00','Q 0.70','80Hz','','',''],push:['–','–','–','–','HPF an/aus','','','']},
- ga:{top:['Thresh','Depth','Attack','Hold','Release','Key HP','Key On',''],bot:['-38dB','+20.0dB','2.00ms','50.0ms','180ms','120Hz','OFF',''],push:['–','–','–','–','–','–','umschalten','']},
- co:{top:['Thresh','Ratio','Attack','Release','Knee','Gain','Detect',''],bot:['-18dB','3:1','10.0ms','120ms','SOFT','+3.0dB','RMS',''],push:['–','–','–','–','umschalten','0 dB','umschalten','']},
- fx:{top:['LF Cut','HF Cut','Predlay','DecayTm','HFDecay','HFSlope','',''],bot:['120Hz','8.00k','20ms','1.80s','6.50k','2.0','',''],push:['','','','','','','','']}
-};
-const S={mode:'mix',sel:1,send:{k:'A',n:3},shift:false,fn:Array(8).fill(0)};
-// Reglerfunktion je Zug (REC schaltet weiter), Drücken = Standardwert
-const FNS=['Gain','Pan','HPF','Trim'],FNPUSH={Gain:'Polarität',Pan:'Mitte',HPF:'HPF an/aus',Trim:'0 dB'};
+// ---------- Sprache: in der App /api/i18n, auf der Webseite i18n.json (?lang=de|en) ----------
+let I18N = { lang: "de", exact: {}, rules: [] }, RULES = [];
+function t(s) { if (I18N.lang !== "en" || s == null || s === "") return s; const h = I18N.exact[s]; if (h !== undefined) return h; for (const [re, to] of RULES) if (re.test(s)) return s.replace(re, to); return s; }
+window.t = t;
+const esc = (s) => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;");
+const $ = (s) => document.querySelector(s);
 
-function view(){
-  const m=S.mode, sc=CH[S.sel], v={lv:LV,mt:['LR','Master'],mc:COL.gray,keys:[],mute:[5]};
-  const cols=CH.map(c=>COL[c[1]]);
-  const detail=(b,title,turn,push,keys,code,mt,mc)=>Object.assign(v,{code,title,top:b.top,bot:b.bot,push:b.push,col:Array(8).fill(mc||COL[sc[1]]),mt,mc:mc||COL[sc[1]],turn,pushT:push,keys,rule:'Alle 8 Displays haben die Farbe des gewählten Kanals ('+sc[0]+')',mute:[5]});
-  if(m==='mix'){const f=S.fn.map(x=>FNS[x]);return Object.assign(v,{code:'MX',title:'Mix · Regler = '+[...new Set(f)].join(' / '),top:CH.map(c=>c[0]),bot:f,push:f.map(x=>FNPUSH[x]),col:cols,turn:'Funktion je Zug (unten im Display)',pushT:'Regler drücken = Standardwert bzw. umschalten',keys:['REC = Reglerfunktion dieses Zuges weiter (SHIFT + REC zurück)','Display unten: Funktion, beim Drehen kurz der Wert, beim Fader kurz die dB','Modi: Gain/Trim, Pan, EQ, Gate/Comp, FX','F1–F8 = Sends auf Fader (Standard Aux 1–8)','SHIFT + F1–F4 = Sends zu FX 1–4','USER = eigene Ebenen 1–4','▲▼ Szene vormerken, ENTER×2 oder ALT+ENTER laden'],rule:'Jeder Kanal in seiner Kanalfarbe'});}
-  if(m==='track1'||m==='track2'){const g=m==='track1';return Object.assign(v,{code:g?'GN':'TR',title:g?'TRACK, Block Gain (GN)':'TRACK, Block Trim (TR)',top:CH.map(c=>c[0]),bot:g?['+32dB','+28dB','+24dB','+30dB','+18dB','+12dB','+12dB','+20dB']:['0dB','+1dB','0dB','-2dB','0dB','+3dB','+3dB','0dB'],push:Array(8).fill(g?'Polarität':'0 dB'),col:cols,turn:g?'Gain (Vorverstärker) der 8 Kanäle':'Digitaler Trim der 8 Kanäle',pushT:g?'Polarität ⌀ umschalten':'Trim auf 0 dB',keys:g?['WRITE = Pad an/aus (gewählter Kanal)','GROUP + ALT, 1 s halten = 48V (gewählter Kanal)','TRACK nochmal = Block Trim']:['TRACK nochmal = zurück zu Mix'],rule:'Jeder Kanal in seiner Kanalfarbe'});}
-  if(m==='pan'){return Object.assign(v,{code:'PA',title:'PAN',top:CH.map(c=>c[0]),bot:['C','L20','R30','L10','C','L60','R60','C'],push:Array(8).fill('Mitte'),col:cols,turn:'Pan der 8 Kanäle',pushT:'Pan auf Mitte',keys:['PAN nochmal = zurück zu Mix'],rule:'Jeder Kanal in seiner Kanalfarbe'});}
-  if(m==='send'){const t=S.send,fx=t.k==='F',name=fx?FXN[t.n-1]:AUXN[t.n-1],lab=(fx?'FX ':'Aux ')+t.n,c=fx?COL.blue:COL.amber,off=t.n+(fx?3:0);
-    const sv=rot(SENDV,off%8),sl=rot(SENDL,off%8);
-    return Object.assign(v,{code:(fx?'F':'A')+(t.n>9?'X':t.n),title:'Sends auf Fader: '+lab+' ('+name+')',top:CH.map(c=>c[0]),bot:sv,push:Array(8).fill('Pre/Post'),col:Array(8).fill(c),lv:sl,fm:'send',mt:[lab,name],mc:c,turn:'Pan des Sends zu '+lab,pushT:'Pre/Post umschalten',keys:['Fader = Sendpegel zu '+lab+', Master-Fader = Pegel von '+lab,'MUTE = Kanal-Mute (Send an/aus gibt es im Protokoll nicht)','F-Tasten sind in den Einstellungen frei belegbar',(fx?'INST = Parameter dieses FX':'F-Taste nochmal oder SEND = zurück zu Mix')],rule:'Alle 8 Displays haben die Farbe des Weges ('+lab+')',mute:sv.map((x,i)=>x==='aus'?i:-1).filter(i=>i>=0)});}
-  if(m==='eq1')return detail(B.eq1,'EQ, Block E1 von 2','Regler 1–4 = Gain (LF, LMF, HMF, HF), Regler 5–8 = Frequenz','Regler 1 und 4: Bell/Shelf, übrige: Reset',['READ = EQ an/aus, WRITE = HPF an/aus','SELECT an einem anderen Kanal = EQ des neuen Kanals','EQ nochmal = Block E2 (Güte und Hochpass)'],'E1',[sc[0],'EQ 1/2']);
-  if(m==='eq2')return detail(B.eq2,'EQ, Block E2 von 2','Regler 1–4 = Güte (Q) der Bänder, Regler 5 = Hochpass-Frequenz','Reset, Regler 5: Hochpass an/aus',['EQ nochmal = zurück zu Mix','Cursor ◀ = zurück zu Block E1'],'E2',[sc[0],'EQ 2/2']);
-  if(m==='ga')return detail(B.ga,'PLUG-IN, Block Gate','Schwelle, Tiefe, Attack, Hold, Release, Key-Filter','Standardwert',['READ = Gate an/aus','PLUG-IN nochmal = Compressor','Große Anzeige = bearbeiteter Kanal'],'GA',[sc[0],'Gate']);
-  if(m==='co')return detail(B.co,'PLUG-IN, Block Compressor','Schwelle, Ratio, Attack, Release, Knee, Gain','Standardwert',['READ = Comp an/aus','PLUG-IN nochmal = zurück zu Mix'],'CO',['Comp','GR -4dB']);
-  if(m.startsWith('fx')){const n=+m[2];return detail(B.fx,'INST, FX '+n+' ('+FXN[n-1]+')','Die Parameter des FX '+n+' (Seite 1 von 2)','Standardwert',['Effekt je Slot wird vom Pult erkannt','INST nochmal = nächster FX, Cursor ◀ ▶ = Parameterseite','SHIFT + F1–F4 = FX direkt wählen'],'P'+n,['FX '+n,FXN[n-1]],COL.blue);}
+// ---------- Beispiel-Pult ----------
+const C = { RED: 1, GREEN: 2, YELLOW: 3, BLUE: 4, MAGENTA: 5, CYAN: 6, WHITE: 7 };
+const LAYERS = [
+	{ note: 62, code: "FS", kind: "fxsend", ch: ["FX1 Rev", "FX2 Cho", "FX3 Dly", "FX4 Hal"].map((n) => [n, C.BLUE]) },
+	{ note: 63, code: "IN", kind: "input", ch: [["Kick", C.RED], ["Snare", C.RED], ["HiHat", C.GREEN], ["Tom 1", C.GREEN], ["Bass", C.BLUE], ["Gtr L", C.MAGENTA], ["Gtr R", C.MAGENTA], ["Vox", C.YELLOW]] },
+	{ note: 64, code: "FR", kind: "fxreturn", ch: [["Reverb", C.MAGENTA], ["Chorus", C.MAGENTA], ["Delay", C.MAGENTA], ["Hall 2", C.MAGENTA]] },
+	{ note: 65, code: "DC", kind: "dca", ch: [["Drums", C.RED], ["Bass", C.RED], ["Git", C.RED], ["Vox", C.RED], ["DCA 5", C.RED], ["DCA 6", C.RED], ["DCA 7", C.RED], ["DCA 8", C.RED]] },
+	{ note: 66, code: "AU", kind: "aux", ch: [["MonL", C.CYAN], ["MonC", C.CYAN], ["MonR", C.CYAN], ["MonDr", C.CYAN], ["InEar1", C.CYAN], ["InEar2", C.CYAN], ["InEar3", C.CYAN], ["InEar4", C.CYAN]] },
+	{ note: 67, code: "GR", kind: "group", ch: [["Grp 1", C.BLUE], ["Grp 2", C.BLUE]] },
+	{ note: 68, code: "OU", kind: "matrix", ch: [["Mtx 1", C.MAGENTA], ["Mtx 2", C.MAGENTA], ["Mtx 3", C.MAGENTA], ["LR", C.YELLOW]] },
+	{ note: 69, code: "U1", kind: "input", ch: [["Kick", C.RED], ["Snare", C.RED], ["Reverb", C.MAGENTA], ["Delay", C.MAGENTA], ["MonL", C.CYAN], ["Vox", C.YELLOW], ["Mtx 1", C.MAGENTA], ["LR", C.YELLOW]] }
+];
+const FNS = { input: ["Gain", "Pan", "HPF", "Trim"], fxreturn: ["Pan"], group: ["Pan"], aux: ["Pan"], matrix: ["Pan"], dca: [], fxsend: [] };
+const EQ1 = ["LF Gain", "LM Gain", "HM Gain", "HF Gain", "LF Hz", "LM Hz", "HM Hz", "HF Hz"], EQ1V = ["+3.0dB", "-2.5dB", "+1.5dB", "+4.0dB", "80Hz", "350Hz", "2.20k", "9.50k"];
+const EQ2 = ["LF Q", "LM Q", "HM Q", "HF Q", "HPF Hz", "", "", ""], EQ2V = ["Q 0.80", "Q 1.20", "Q 1.00", "Q 0.70", "80Hz", "", "", ""];
+const GA = ["Thresh", "Depth", "Attack", "Hold", "Release", "Key HP", "Key On", ""], GAV = ["-38dB", "+20dB", "2.00ms", "50.0ms", "180ms", "120Hz", "OFF", ""];
+const CO = ["Thresh", "Ratio", "Attack", "Release", "Knee", "Gain", "Detect", ""], COV = ["-18dB", "3:1", "10.0ms", "120ms", "SOFT", "+3.0dB", "RMS", ""];
+const FXP = ["Predlay", "DecayTm", "HFDecay", "HFSlope", "LF Cut", "HF Cut", "", ""], FXV = ["10ms", "2.94s", "6.04k", "2.1", "400Hz", "7.10k", "", ""];
+const FXNAME = ["FX1 HALL", "FX2 CHORUS", "FX3 DELAY", "FX4 HALL"];
+const AUXN = ["MonL", "MonC", "MonR", "MonDr", "InEar1", "InEar2", "InEar3", "InEar4", "FX5", "FX6", "Aux 11", "Aux 12"];
+const S = { layer: 1, mode: "mix", block: 0, fx: 0, sel: 1, send: null, shift: false, alt: false, fn: {}, mute: new Set([5]), pafl: new Set(), turned: Array(8).fill(0), val: {}, scene: null, nameValue: false };
+const vis = () => LAYERS[S.layer].ch.map(([n, col]) => ({ n, col, kind: S.layer === 7 ? (["Reverb", "Delay"].includes(n) ? "fxreturn" : n.startsWith("Mon") ? "aux" : n.startsWith("Mtx") || n === "LR" ? "matrix" : "input") : LAYERS[S.layer].kind })).concat(Array(8).fill(null)).slice(0, 8);
+const key = (c) => `${S.layer}:${c.n}`;
+const fnOf = (c) => { const l = FNS[c.kind]; return l.length ? l[(S.fn[key(c)] ?? 0) % l.length] : ""; };
+const baseVal = { Gain: [32, 28, 24, 30, 18, 12, 12, 20], Pan: [0, -20, 30, -10, 0, -60, 60, 0], HPF: [80, 120, 200, 90, 40, 100, 100, 110], Trim: [0, 0, 0, 0, 0, 2, 2, 0] };
+const value = (c, i, f) => S.val[key(c) + f] ?? (baseVal[f] ? baseVal[f][i] : 0);
+const fmt = (f, v) => f === "Pan" ? (v === 0 ? "C" : v < 0 ? `L${-v}` : `R${v}`) : f === "HPF" ? `${v}Hz` : `${v > 0 ? "+" : ""}${v.toFixed(1)}dB`;
+const PUSH = { Gain: "Polarität", Pan: "Mitte", HPF: "HPF an/aus", Trim: "0 dB" };
+let KEYS = {}, lastKey = null, flash = Array(8).fill(null);
+const now = () => Date.now();
+
+// ---------- Zustand → Live-Abbild wie in der App ----------
+function live() {
+	const ch = vis(), detail = ["eq", "plugin", "inst"].includes(S.mode), selCh = LAYERS[1].ch[S.sel] ?? LAYERS[1].ch[0];
+	const top = [], bottom = [], colors = [], rings = [], faders = [], leds = {};
+	const blocks = { eq: [[EQ1, EQ1V], [EQ2, EQ2V]], plugin: [[GA, GAV], [CO, COV]], inst: [[FXP, FXV]] };
+	for (let i = 0; i < 8; i++) {
+		const c = ch[i], fl = flash[i] && flash[i].until > now() ? flash[i].text : null;
+		if (detail) { const [P, V] = blocks[S.mode][S.mode === "inst" ? 0 : S.block]; top.push(P[i]); bottom.push(fl ?? V[i]); colors.push(S.mode === "inst" ? C.BLUE : selCh[1]); rings.push(P[i] ? 0x20 + 3 + (i % 5) : 0); }
+		else if (!c) { top.push(""); bottom.push(""); colors.push(0); rings.push(0); }
+		else {
+			top.push(c.n.slice(0, 7));
+			const recent = now() - S.turned[i] < 1500;
+			let f = S.send ? "Pan" : S.mode === "track" ? (S.block ? "Trim" : "Gain") : S.mode === "pan" ? "Pan" : fnOf(c);
+			if (S.mode === "track" && c.kind !== "input") f = "";
+			const v = f ? value(c, i, f) : 0;
+			bottom.push(fl ?? (S.nameValue ? `${c.kind === "input" ? "IN" : c.kind.toUpperCase().slice(0, 3)} ${i + 1}` : f ? (recent ? fmt(f, v) : f) : ""));
+			colors.push(S.send ? (S.send.k === "F" ? C.BLUE : C.CYAN) : c.col);
+			rings.push(!f ? 0 : f === "Pan" ? Math.round(6 + v / 20) : 0x20 + Math.max(1, Math.min(11, Math.round(f === "HPF" ? v / 40 : (v + 10) / 6))));
+		}
+		faders.push(c ? (S.send ? 5000 + ((i * 1777) % 7000) : [12528, 11000, 9800, 11800, 12528, 10268, 10268, 13300][i]) : 0);
+		if (c) {
+			leds[i] = !detail && !S.send && S.mode === "mix" && (S.fn[key(c)] ?? 0) % Math.max(1, FNS[c.kind].length) ? "on" : "off";
+			leds[8 + i] = S.pafl.has(i) ? "on" : "off"; leds[16 + i] = S.mute.has(i) ? "on" : "off"; leds[24 + i] = S.layer === 1 && S.sel === i ? "on" : "off";
+		}
+	}
+	for (const L of LAYERS) leds[L.note] = LAYERS[S.layer] === L ? "on" : "off";
+	leds[40] = S.mode === "track" ? "on" : "off"; leds[42] = S.mode === "pan" ? "on" : "off"; leds[44] = S.mode === "eq" ? "on" : "off";
+	leds[43] = S.mode === "plugin" ? "on" : "off"; leds[45] = S.mode === "inst" ? "on" : "off"; leds[41] = S.send ? "on" : "off";
+	if (S.send) { const n = S.send.k === "F" ? S.send.n : S.send.n <= 8 ? S.send.n : S.send.n - 4; leds[53 + n] = S.send.k === "F" || S.send.n > 8 ? "blink" : "on"; }
+	leds[70] = S.shift ? "on" : "off"; leds[73] = S.alt ? "on" : "off"; leds[52] = S.nameValue ? "on" : "off"; leds[83] = S.scene ? "blink" : "off";
+	const code = S.send ? (S.send.k === "F" ? "F" + S.send.n : "A" + (S.send.n > 9 ? "X" : S.send.n)) : S.mode === "mix" ? LAYERS[S.layer].code : { track: ["GN", "TR"], pan: ["PA"], eq: ["E1", "E2"], plugin: ["GA", "CO"], inst: ["P1", "P2", "P3", "P4"] }[S.mode][S.mode === "inst" ? S.fx : S.block];
+	const big = S.scene ? `SZ ${S.scene} ?` : S.mode === "inst" ? FXNAME[S.fx] : S.send ? (S.send.k === "F" ? FXNAME[S.send.n - 1] : AUXN[S.send.n - 1].toUpperCase()) : `IN ${S.sel + 1} ${(LAYERS[1].ch[S.sel] ?? [""])[0].toUpperCase()}`;
+	const meters = ch.map((c, i) => (c ? Math.round(3 + 3 * Math.abs(Math.sin(now() / (700 + i * 90) + i))) : 0));
+	// Tasten mit modusabhängiger Wirkung (wie in der App)
+	const keys = JSON.parse(JSON.stringify(KEYS)), setK = (n, label, idle) => { if (keys[n]) { keys[n].label = t(label); keys[n].idle = idle; } };
+	const bc = code;
+	setK(74, bc === "E1" || bc === "E2" ? "EQ an/aus" : bc === "GA" ? "Gate an/aus" : bc === "CO" ? "Comp an/aus" : "Block an/aus", !["E1", "E2", "GA", "CO"].includes(bc));
+	setK(75, S.mode === "eq" ? "HPF an/aus" : S.mode === "track" ? "Pad an/aus" : "HPF/Pad", !["eq", "track"].includes(S.mode));
+	setK(76, "EQ flach", S.mode !== "eq"); setK(79, "48V", S.mode !== "track");
+	const sf = (c) => ({ rec: t("Regler▸"), solo: c && c.kind === "input" ? "PAFL" : "", mute: c && c.kind !== "fxsend" ? "Mute" : "", select: "Sel" });
+	return { device: { top, bottom, colors, rings, faders, meters, clip: Array(8).fill(false), leds, assign: code, timecode: big }, keys, shiftHeld: S.shift, stripFns: ch.map(sf), help: { push: detail ? Array(8).fill("") : ch.map((c) => (c ? t(PUSH[S.send ? "Pan" : fnOf(c)] ?? "") : "")) } };
 }
 
-const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');
-const R=(x,y,w,h,f,s,rx=5,ex='')=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${rx}" fill="${f}"${s?` stroke="${s}"`:''} ${ex}/>`;
-const T=(x,y,s,sz,f,a='middle',w=500,cls='')=>`<text x="${x}" y="${y}" font-size="${sz}" fill="${f}" text-anchor="${a}" font-weight="${w}"${cls?` class="${cls}"`:''}>${esc(tx(s))}</text>`;
-// Übersetzung für Texte im Bild: ganze Texte, sonst „↓ …“/„→ …“ mit übersetztem Rest
-const tx=s=>{const x=t(s);if(x!==s)return x;const m=/^(↓ |→ )(.+)$/.exec(s);return m?m[1]+t(m[2]):s;};
-function key(id,x,y,w,h,l,sub,on,k,ls=11,ss=9){
-  return `<g${k?` data-k="${k}" class="clk" tabindex="0" role="button" aria-label="${esc(l)}"`:''}>${R(x,y,w,h,on?'#EF9F27':'#3b3c42',on?'#ffd08a':'#55565c')}${T(x+w/2,y+h/2-(sub?3:-4),l,ls,on?'#2a1a00':'#ececee',undefined,600)}${sub?T(x+w/2,y+h/2+11,sub,ss,on?'#4a2f00':'#a9aab0',undefined,400):''}</g>`;
+// ---------- „Jetzt aktiv“ ----------
+function nowPanel() {
+	const sel = (LAYERS[1].ch[S.sel] ?? [""])[0], L = LAYERS[S.layer];
+	let title, knobs, keys;
+	if (S.send) { const lab = S.send.k === "F" ? `FX ${S.send.n}` : `Aux ${S.send.n}`; title = `Sends auf Fader · ${S.send.k === "F" ? "FX" : "Aux"} ${S.send.n}`; knobs = "Pan des Sends"; keys = ["Fader = Sendpegel, Master = Pegel des Weges", "MUTE = Kanal-Mute", "gleiche F-Taste oder SEND = Sends aus"]; }
+	else if (S.mode === "mix") { const f = [...new Set(vis().filter(Boolean).map(fnOf).filter(Boolean))]; title = `Mix · Regler = ${f.join(" / ") || "–"}`; knobs = "Funktion je Zug (unten im Display)"; keys = ["REC = Reglerfunktion dieses Zuges weiter (SHIFT + REC zurück)", "Regler drücken = Standardwert bzw. umschalten", "Display unten: Funktion, beim Drehen kurz der Wert, beim Fader kurz die dB", "Modi: Gain/Trim, Pan, EQ, Gate/Comp, FX", "F1–F8 = Sends auf Fader (SHIFT = 2. Belegung)", "USER = eigene Ebenen 1–4"]; }
+	else if (S.mode === "track") { title = S.block ? "TRACK · Trim (TR)" : "TRACK · Gain (GN)"; knobs = S.block ? "Trim der 8 Kanäle" : "Gain der 8 Kanäle"; keys = S.block ? ["TRACK nochmal = zurück zu Mix"] : ["WRITE = Pad (gewählter Kanal)", "ALT + GROUP 1 s = 48V (gewählter Kanal)", "TRACK nochmal = Trim"]; }
+	else if (S.mode === "pan") { title = "PAN"; knobs = "Pan des Kanals"; keys = ["PAN nochmal = zurück zu Mix"]; }
+	else if (S.mode === "eq") { title = `${S.block ? "EQ · Block E2" : "EQ · Block E1"} (gewählter Kanal)`; knobs = (S.block ? EQ2 : EQ1).filter(Boolean).join(", "); keys = S.block ? ["READ = EQ an/aus", "WRITE = HPF an/aus", "EQ nochmal = zurück zu Mix, Cursor ◀ = E1"] : ["READ = EQ an/aus", "WRITE = HPF an/aus", "TRIM + ALT = alle EQ-Gains 0 dB", "EQ nochmal / Cursor ▶ = Block E2"]; }
+	else if (S.mode === "plugin") { title = `${S.block ? "PLUG-IN · Compressor" : "PLUG-IN · Gate"} (gewählter Kanal)`; knobs = (S.block ? CO : GA).filter(Boolean).join(", "); keys = S.block ? ["READ = Comp an/aus", "PLUG-IN nochmal = zurück zu Mix"] : ["READ = Gate an/aus", "PLUG-IN nochmal = Compressor"]; }
+	else { title = `INST · FX ${S.fx + 1}`; knobs = FXP.filter(Boolean).join(", "); keys = [S.fx < 3 ? `INST nochmal = FX ${S.fx + 2}` : "INST nochmal = FX – zurück zu Mix", "SHIFT + F1–F4 = FX direkt wählen"]; }
+	keys = [...keys, "CANCEL = zurück zu Mix"];
+	$("#now").innerHTML = `<h2>${t("Jetzt aktiv")}</h2><p class="title">${esc(t(title))}</p><dl><dt>${t("Ebene")}</dt><dd>${esc(L.code === "U1" ? "USER 1" : ["MIDI TRACKS", "INPUTS", "AUDIO TRACKS", "AUDIO INST", "AUX", "BUSES", "OUTPUTS", "USER"][S.layer])}</dd><dt>${t("Auswahl")}</dt><dd>${esc(sel)}</dd><dt>${t("Regler")}</dt><dd>${esc(t(knobs))}</dd></dl><ul>${keys.map((k) => `<li>${esc(t(k))}</li>`).join("")}</ul>`;
 }
 
-function render(){
-  const v=view(),m=S.mode,sh=S.shift;let o='';
-  for(let i=0;i<9;i++)o+=R(14+i*104,6,104,572,'#2a2b30','#3a3b41',8);
-  for(let i=0;i<8;i++){
-    const x0=20+i*104,cx=x0+48;
-    o+=R(x0,16,96,46,v.col[i],'#00000055',4)+T(cx,35,v.top[i],14,'#fff',undefined,600,'mono')+T(cx,54,v.bot[i],14,'#fff',undefined,500,'mono');
-    for(let s=0;s<8;s++)o+=R(x0+6+s*11,68,9,7,'#2a2b2f',null,1.5,`class="led" data-s="${i}" data-i="${s}"`);
-    o+=`<g><circle cx="${cx}" cy="110" r="22" fill="#3c3d43" stroke="#7a7b82" stroke-width="1.5"/><rect x="${cx-2}" y="90" width="4" height="12" rx="2" fill="#ececee" transform="rotate(${(i*29)%100-40} ${cx} 110)"/></g>`;
-    o+=T(cx,146,'↓ '+v.push[i],10,'#a9aab0',undefined,400);
-    const muteOn=v.mute.includes(i),isSel=S.sel===i;
-    const lab=[['REC','Regler▸'],['SOLO','Vorhören'],[m==='send'?'SEND':'MUTE',m==='send'?'an/aus':'stumm'],['SELECT','wählen']];
-    const ons=[m==='mix'&&S.fn[i]>0,false,muteOn,isSel];
-    lab.forEach((l,j)=>{const y=156+j*29,on=ons[j];
-      o+=`<g${j===3?` data-k="S${i}" class="clk" tabindex="0" role="button" aria-label="SELECT ${esc(CH[i][0])}"`:j===0?` data-k="R${i}" class="clk" tabindex="0" role="button" aria-label="REC ${esc(CH[i][0])}"`:''}>${R(x0+8,y,80,24,on?(j===3?'#EF9F27':'#e0553a'):'#3b3c42',on?'#ffd08a':'#55565c')}${T(cx,y+11,l[0],11,on&&j===3?'#2a1a00':'#ececee',undefined,600)}${T(cx,y+21,l[1],8.5,on&&j===3?'#4a2f00':'#a9aab0',undefined,400)}</g>`;});
-    const ky=282+(1-v.lv[i])*(278-22);
-    o+=R(cx-4,282,8,278,'#101113','#3a3b41',4)+R(cx-17,ky,34,22,'#d9d9de','#fff',4)+R(cx-12,ky+10,24,2,'#555',null,1);
-  }
-  const mx0=20+8*104,mcx=mx0+48;
-  o+=R(mx0,16,96,46,v.mc,'#00000055',4)+T(mcx,35,v.mt[0],14,'#fff',undefined,600,'mono')+T(mcx,54,v.mt[1],14,'#fff',undefined,500,'mono');
-  o+=T(mcx,110,'MASTER',12,'#a9aab0',undefined,600);
-  const my=282+(1-(m==='send'?.7:.75))*(278-22);
-  o+=R(mcx-4,282,8,278,'#101113','#3a3b41',4)+R(mcx-17,my,34,22,'#d9d9de','#fff',4);
-  // rechter Bereich
-  const X=975;
-  o+=R(X,16,64,46,'#0b0b0c','#55565c',4)+T(X+32,48,v.code,28,'#EF9F27',undefined,600,'mono');
-  o+=R(X+74,16,226,46,'#0b0b0c','#55565c',4)+T(X+187,48,'SZENE 012',22,'#EF9F27',undefined,600,'mono');
-  const modeKeys=[['TRACK','Gain','TRACK',m.startsWith('track')],['PAN','Pan','PAN',m==='pan'],['EQ','EQ','EQ',m.startsWith('eq')],['SEND','Sends','SEND',m==='send'],['PLUG-IN','Gate/Comp','PLUG',m==='ga'||m==='co'],['INST','FX','INST',m.startsWith('fx')]]; // Reihenfolge wie am Gerät
-  modeKeys.forEach((k,i)=>o+=key(k[0],X+i*47,78,44,44,k[0],k[1],k[3],k[2],10,9));
-  const fm=S.mode==='send'||S.mode.startsWith('fx')?S.send:null;
-  for(let i=0;i<8;i++){const n=i+1,sub=sh?(n<=4?'FX '+n:'Aux '+(n+4)):'Aux '+n;
-    const on=m==='send'&&((S.send.k==='A'&&!sh&&S.send.n===n)||(S.send.k==='F'&&n<=4&&S.send.n===n)||(S.send.k==='A'&&n>4&&S.send.n===n+4))||(m.startsWith('fx')&&+m[2]===n&&n<=4);
-    o+=key('F'+n,X+i*35.2,134,32,44,'F'+n,sub,on,'F'+n,11,8.5);}
-  [['FX-Weg'],['Input'],['FX-Ret'],['DCA'],['Aux'],['Grp'],['Out'],['User']].forEach((l,i)=>o+=key('L'+i,X+i*35.2,190,32,28,l[0],'',false,'',8.5));
-  const auto=(id)=>{const eq=m.startsWith('eq'),tr=m.startsWith('track'),fx=m.startsWith('fx');
-    if(id==='READ')return eq?'EQ an':m==='ga'?'Gate an':m==='co'?'Comp an':'–';
-    if(id==='WRITE')return eq?'HPF an':tr?'Pad an':'–';
-    if(id==='TRIM')return eq?'EQ Reset':'–';
-    if(id==='GROUP')return tr?'48V':'–';return '–';};
-  [['SHIFT','Fein / 2. Belegung','SHIFT',sh],['OPTION','frei','',false],['CONTROL','Reset','',false],['ALT','Entsperren','',false]].forEach((k,i)=>o+=key(k[0],X+i*75,228,70,36,k[0],k[1],k[3],k[2],10,8.5));
-  ['READ','WRITE','TRIM','TOUCH','LATCH','GROUP'].forEach((id,i)=>{const s=auto(id);o+=key(id,X+i*47,274,44,40,id,s,false,'',9,8.5);});
-  [['SAVE','gesperrt',''],['UNDO','–',''],['CANCEL','Zurück','CANCEL'],['ENTER','Szene laden','']].forEach((k,i)=>o+=key(k[0],X+i*75,324,70,36,k[0],k[1],false,k[2],10,8.5));
-  [['BANK ◀','8 Kanäle'],['BANK ▶','8 Kanäle'],['CH ◀','Auswahl'],['CH ▶','Auswahl'],['NAME','Nr./Wert']].forEach((k,i)=>o+=key(k[0],X+i*60,370,56,36,k[0],k[1],false,'',10,8.5));
-  [['◀','Block'],['▲','Szene −'],['▼','Szene +'],['▶','Block']].forEach((k,i)=>o+=key(k[0],X+i*47,418,44,38,k[0],k[1],false,'',12,8.5));
-  o+=`<circle cx="1232" cy="437" r="38" fill="#3c3d43" stroke="#7a7b82" stroke-width="1.5"/>`+T(1232,434,'Jog',12,'#ececee',undefined,600)+T(1232,449,'Kanal blättern',8.5,'#a9aab0',undefined,400);
-  [['REW','Titel −'],['FFWD','Titel +'],['STOP','Stopp'],['PLAY','Play'],['REC','ALT 1 s']].forEach((k,i)=>o+=key(k[0],X+i*60,486,56,38,k[0],k[1],false,'',10,8.5));
-  o+=T(X,552,'Schema, nicht maßstabsgetreu. Tasten gehören zum Original-Layout des X-Touch.',10,'#8b8c93','start',400);
-  document.getElementById('panel').innerHTML=o;
-  document.getElementById('now').innerHTML=`<h2>${t('Jetzt aktiv')}</h2><p class="title">${esc(t(v.title))}</p><dl><dt>${t('Regler drehen')}</dt><dd>${esc(t(v.turn))}</dd><dt>${t('Regler drücken')}</dt><dd>${esc(t(v.pushT))}</dd><dt>${t('Display-Farbe')}</dt><dd>${esc(t(v.rule))}</dd><dt>${t('Tasten')}</dt><dd><ul>${v.keys.map(k=>`<li>${esc(t(k))}</li>`).join('')}</ul></dd></dl>`;
+// ---------- Tasten ----------
+const STRIP = { rec: "Reglerfunktion dieses Zuges weiter (SHIFT + REC zurück)", solo: "PAFL (Vorhören)", mute: "Mute", select: "Kanal wählen" };
+function explain(note, knob) {
+	let name, fn, how;
+	if (knob !== undefined) { const c = vis()[knob]; name = `Encoder ${knob + 1}`; fn = c ? fnOf(c) || "–" : "–"; how = "Mausrad = drehen, Klick = drücken (Standardwert)"; }
+	else if (note < 32) { const row = ["rec", "solo", "mute", "select"][note >> 3]; name = `${row.toUpperCase()} ${(note & 7) + 1}`; fn = STRIP[row]; how = "Kanaltasten: Einstellungen › Tastenbelegung › Kanaltasten"; }
+	else { const k = KEYS[note]; if (!k) return; name = k.name; fn = S.shift && k.shiftFull ? k.shiftFull : k.full; how = k.shiftFull && !S.shift ? `${t("mit SHIFT")}: ${k.shiftFull}` : ""; }
+	$("#key").innerHTML = `<h2>${t("Taste")}</h2><p class="name">${esc(name)}</p><p class="fn">${esc(t(fn))}</p>${how ? `<p class="hint">${esc(t(how))}</p>` : ""}`;
+}
+function press(note) {
+	const ch = vis();
+	if (note < 8) { const c = ch[note]; if (c && !S.send) { if (S.mode !== "mix") { S.mode = "mix"; S.block = 0; } const n = FNS[c.kind].length; if (n > 1) S.fn[key(c)] = ((S.fn[key(c)] ?? 0) + (S.shift ? n - 1 : 1)) % n; } }
+	else if (note < 16) { const i = note - 8; if (ch[i]?.kind === "input") S.pafl.has(i) ? S.pafl.delete(i) : S.pafl.add(i); }
+	else if (note < 24) { const i = note - 16; if (ch[i]) S.mute.has(i) ? S.mute.delete(i) : S.mute.add(i); }
+	else if (note < 32) { if (S.layer === 1) S.sel = note - 24; }
+	else if (note === 40) { if (S.mode === "track" && S.block === 0) S.block = 1; else if (S.mode === "track") { S.mode = "mix"; S.block = 0; } else { S.mode = "track"; S.block = 0; S.send = null; } }
+	else if (note === 42) { S.mode = S.mode === "pan" ? "mix" : "pan"; S.block = 0; S.send = null; }
+	else if (note === 44) { if (S.mode === "eq" && S.block === 0) S.block = 1; else if (S.mode === "eq") { S.mode = "mix"; S.block = 0; } else { S.mode = "eq"; S.block = 0; S.send = null; } }
+	else if (note === 43) { if (S.mode === "plugin" && S.block === 0) S.block = 1; else if (S.mode === "plugin") { S.mode = "mix"; S.block = 0; } else { S.mode = "plugin"; S.block = 0; S.send = null; } }
+	else if (note === 45) { if (S.mode === "inst") { if (S.fx < 3) S.fx++; else { S.mode = "mix"; S.fx = 0; } } else { S.mode = "inst"; S.fx = S.send?.k === "F" ? S.send.n - 1 : 0; } }
+	else if (note === 41) { S.send = S.send ? null : { k: "A", n: 3 }; S.mode = "mix"; }
+	else if (note >= 54 && note <= 61) { const n = note - 53, tgt = S.shift ? (n <= 4 ? { k: "F", n } : { k: "A", n: n + 4 }) : { k: "A", n }; const same = S.send && S.send.k === tgt.k && S.send.n === tgt.n; S.send = same ? null : tgt; if (S.mode === "inst" && tgt.k === "F") S.fx = tgt.n - 1; else S.mode = "mix"; S.shift = false; }
+	else if (note >= 62 && note <= 69) { S.layer = note - 62; }
+	else if (note === 70) { S.shift = !S.shift; }
+	else if (note === 73) { S.alt = !S.alt; }
+	else if (note === 82) { S.mode = "mix"; S.block = 0; S.send = null; S.scene = null; }
+	else if (note === 96 || note === 97) { S.scene = Math.max(1, (S.scene ?? 12) + (note === 96 ? -1 : 1)); }
+	else if (note === 83) { if (S.scene) S.scene = null; }
+	else if (note === 98 || note === 99) { if (["eq", "plugin", "track"].includes(S.mode)) S.block = note === 99 ? 1 : 0; }
+	else if (note === 52) { S.nameValue = !S.nameValue; }
+	render();
+}
+function turn(i, d) {
+	const c = vis()[i]; if (!c || ["eq", "plugin", "inst"].includes(S.mode)) return;
+	const f = S.send ? "Pan" : S.mode === "track" ? (S.block ? "Trim" : "Gain") : S.mode === "pan" ? "Pan" : fnOf(c); if (!f) return;
+	const lim = { Gain: [-6, 60], Pan: [-100, 100], HPF: [20, 2000], Trim: [-24, 24] }[f], step = { Gain: 1, Pan: 5, HPF: 10, Trim: 0.5 }[f];
+	S.val[key(c) + f] = Math.max(lim[0], Math.min(lim[1], value(c, i, f) + d * step)); S.turned[i] = now(); render();
+}
+function pushKnob(i) {
+	const c = vis()[i]; if (!c) return;
+	const f = S.send ? "Pan" : fnOf(c); if (!f) return;
+	if (f === "Pan" || f === "Trim") { S.val[key(c) + f] = 0; S.turned[i] = now(); }
+	else flash[i] = { text: f === "Gain" ? "INV" : "HPF ON", until: now() + 1200 };
+	render();
 }
 
-function press(k){
-  const m=S.mode;
-  if(k==='SHIFT'){S.shift=!S.shift;}
-  else if(k==='CANCEL'){S.mode='mix';}
-  else if(k==='TRACK'){S.mode=m==='track1'?'track2':m==='track2'?'mix':'track1';}
-  else if(k==='PAN'){S.mode=m==='pan'?'mix':'pan';}
-  else if(k==='SEND'){S.mode=m==='send'?'mix':'send';}
-  else if(k==='EQ'){S.mode=m==='eq1'?'eq2':m==='eq2'?'mix':'eq1';}
-  else if(k==='PLUG'){S.mode=m==='ga'?'co':m==='co'?'mix':'ga';}
-  else if(k==='INST'){S.mode=m.startsWith('fx')?(+m[2]===4?'mix':'fx'+(+m[2]+1)):'fx1';}
-  else if(/^F\d$/.test(k)){const n=+k[1],t=S.shift?(n<=4?{k:'F',n}:{k:'A',n:n+4}):{k:'A',n};
-    const same=m==='send'&&S.send.k===t.k&&S.send.n===t.n;
-    if(same)S.mode='mix';else{S.send=t;S.mode=(m.startsWith('fx')&&t.k==='F')?'fx'+t.n:'send';}
-    S.shift=false;}
-  else if(/^S\d$/.test(k)){S.sel=+k[1];}
-  else if(/^R\d$/.test(k)){const i=+k[1];S.mode='mix';S.fn[i]=(S.fn[i]+(S.shift?FNS.length-1:1))%FNS.length;S.shift=false;}
-  render();
+// ---------- Zeichnen ----------
+function render() { drawXTouch($("#xt"), live(), { interactive: true, demo: true, selected: lastKey }); nowPanel(); }
+$("#xt").addEventListener("click", (e) => {
+	const k = e.target.closest("[data-knob]"); if (k) { const i = +k.dataset.knob; pushKnob(i); explain(null, i); return; }
+	const g = e.target.closest("[data-note]"); if (!g) return;
+	const n = +g.dataset.note; lastKey = n; explain(n); press(n);
+});
+$("#xt").addEventListener("wheel", (e) => { const k = e.target.closest("[data-knob]"); if (!k) return; e.preventDefault(); turn(+k.dataset.knob, e.deltaY < 0 ? 1 : -1); }, { passive: false });
+$("#xt").addEventListener("keydown", (e) => { if (e.key !== "Enter" && e.key !== " ") return; const g = e.target.closest("[data-note],[data-knob]"); if (!g) return; e.preventDefault(); g.dispatchEvent(new MouseEvent("click", { bubbles: true })); });
+const CHIPS = [["Monitormix Aux 3", () => { S.send = { k: "A", n: 3 }; S.mode = "mix"; }], ["Hall (FX 1)", () => { S.mode = "inst"; S.fx = 0; S.send = { k: "F", n: 1 }; }], ["EQ Snare", () => { S.layer = 1; S.sel = 1; S.mode = "eq"; S.block = 0; S.send = null; }], ["Gate", () => { S.mode = "plugin"; S.block = 0; S.send = null; }], ["Compressor", () => { S.mode = "plugin"; S.block = 1; S.send = null; }], ["REC: Pan auf Zug 1", () => { S.layer = 1; S.mode = "mix"; S.send = null; S.fn["1:Kick"] = 1; }], ["Zurück zu Mix", () => { S.mode = "mix"; S.block = 0; S.send = null; S.fn = {}; S.shift = false; }]];
+function chips() { $("#chips").innerHTML = CHIPS.map((c, i) => `<button type="button" data-c="${i}">${esc(t(c[0]))}</button>`).join(""); }
+$("#chips").addEventListener("click", (e) => { const b = e.target.closest("button"); if (b) { CHIPS[+b.dataset.c][1](); render(); } });
+function translateDom() {
+	if (I18N.lang !== "en") return; document.documentElement.lang = "en"; document.title = t(document.title);
+	const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+	for (let n = w.nextNode(); n; n = w.nextNode()) { if (n.parentElement?.closest("script,style,svg")) continue; const k = n.nodeValue.trim(); if (k) { const x = t(k); if (x !== k) n.nodeValue = n.nodeValue.replace(k, x); } }
 }
-const panel=document.getElementById('panel');
-panel.addEventListener('click',e=>{const g=e.target.closest('[data-k]');if(g)press(g.dataset.k);});
-panel.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){const g=e.target.closest('[data-k]');if(g){e.preventDefault();press(g.dataset.k);}}});
-const chips=[['Monitormix Aux 3',()=>{S.mode='send';S.send={k:'A',n:3};}],['Hall (FX 1)',()=>{S.mode='send';S.send={k:'F',n:1};}],['EQ Snare',()=>{S.sel=1;S.mode='eq1';}],['Gate',()=>{S.mode='ga';}],['Compressor',()=>{S.mode='co';}],['FX-Parameter',()=>{S.mode='fx1';}],['Zurück zu Mix',()=>{S.mode='mix';S.shift=false;S.fn.fill(0);}]];
-const drawChips=()=>{document.getElementById('chips').innerHTML=chips.map((c,i)=>`<button type="button" data-c="${i}">${esc(t(c[0]))}</button>`).join('');};drawChips();
-document.getElementById('chips').addEventListener('click',e=>{const b=e.target.closest('button');if(b){chips[+b.dataset.c][1]();render();}});
-render();
-if(new URLSearchParams(location.search).get('lang')==='en')fetch(location.protocol==='file:'||location.hostname.endsWith('github.io')?'i18n.json':'/api/i18n').then(r=>r.json()).then(d=>{I18N={...d,lang:'en'};RULES=d.rules.map(([a,b])=>[new RegExp(a),b]);translateDom();drawChips();render();}).catch(()=>{});
-let tick=0;
-setInterval(()=>{tick+=1;document.querySelectorAll('.led').forEach(r=>{const s=+r.dataset.s,i=+r.dataset.i;
-  const L=.25+.5*Math.abs(Math.sin(tick/(5+s*.9)+s))+Math.random()*.12;const on=i<Math.round(L*8);
-  r.setAttribute('fill',on?(i>=7?'#e24b4a':i>=5?'#EF9F27':'#4fbf7a'):'#2a2b2f');});},140);
+(async () => {
+	// In der App: Sprache der App; auf der Webseite: Englisch. ?lang=de|en wählt ausdrücklich.
+	const want = new URLSearchParams(location.search).get("lang");
+	let inApp = false;
+	try { const r = await fetch("/api/i18n"); if (!r.ok) throw 0; I18N = await r.json(); inApp = true; }
+	catch { try { I18N = { ...(await (await fetch("i18n.json")).json()), lang: "en" }; } catch { /* nur Deutsch */ } }
+	if (want === "de" || want === "en") I18N.lang = want;
+	RULES = (I18N.rules || []).map(([a, b]) => [new RegExp(a), b]);
+	try { if (!inApp) throw 0; KEYS = (await (await fetch("/api/keys")).json()).keys; } catch { KEYS = await (await fetch(`keys-${I18N.lang}.json`)).json(); }
+	translateDom(); chips(); render();
+	setInterval(render, 250); // Pegel und kurze Werteanzeige laufen weiter
+})();
 </script>
 </body>
 </html>

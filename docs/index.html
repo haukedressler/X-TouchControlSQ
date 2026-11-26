@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Surface Control for SQ – X-Touch für Allen &amp; Heath SQ</title>
+<title>Surface Control for SQ – X-Touch for Allen &amp; Heath SQ</title>
 <style>
 :root{--bg:#f3f2ee;--card:#fff;--ink:#1d1d1f;--muted:#5d5d63;--line:#d9d7d0;--accent:#b8730f;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",system-ui,sans-serif}
 @media (prefers-color-scheme:dark){:root{--bg:#17181b;--card:#212226;--ink:#ececee;--muted:#a3a3aa;--line:#33343a;--accent:#ef9f27;color-scheme:dark}}
@@ -22,7 +22,7 @@ img.shot{width:100%;border-radius:10px;border:1px solid var(--line);display:bloc
 table{border-collapse:collapse;width:100%;font-size:15px}th,td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:top}th{color:var(--muted);font-weight:600}
 code{font-size:14px}
 .notes h3{font-size:16px;margin:16px 0 2px}.notes h3 small{color:var(--muted);font-weight:400}
-iframe{width:100%;height:900px;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+iframe{width:100%;height:820px;border:1px solid var(--line);border-radius:10px;background:var(--card)}
 [data-en]{display:none}html[lang=en] [data-de]{display:none}html[lang=en] [data-en]{display:revert}
 footer{color:var(--muted);font-size:13px;max-width:1080px;margin:0 auto;padding:0 20px 30px}
 </style>
@@ -38,7 +38,7 @@ footer{color:var(--muted);font-size:13px;max-width:1080px;margin:0 auto;padding:
     <a href="#versionen"><span data-de>Versionen</span><span data-en>Versions</span></a>
     <a href="https://github.com/haukedressler/X-TouchControlSQ/issues/new/choose"><span data-de>Fehler melden</span><span data-en>Report an issue</span></a>
   </nav>
-  <button id="lang" type="button">English</button>
+  <button id="lang" type="button">Deutsch</button>
 </header>
 <main>
   <h1><span data-de>Behringer X-Touch als Bedienoberfläche für Allen &amp; Heath SQ</span><span data-en>Behringer X-Touch as a control surface for Allen &amp; Heath SQ</span></h1>
@@ -83,7 +83,7 @@ footer{color:var(--muted);font-size:13px;max-width:1080px;margin:0 auto;padding:
   <p><img class="shot" src="img/key-assignment-de.png" alt="Tastenbelegung / key assignment"></p>
 
   <h2 id="demo">Demo</h2>
-  <p data-de>Übungsmodell im Browser – Tasten anklicken.</p><p data-en>Practice model in the browser – click the keys.</p>
+  <p data-de>Übungsmodell im Browser – Tasten anklicken, Regler mit dem Mausrad drehen.</p><p data-en>Practice model in the browser – click the keys, turn the knobs with the mouse wheel.</p>
   <iframe id="demo-frame" src="demo.html" title="Demo"></iframe>
 
   <h2 id="versionen"><span data-de>Versionen</span><span data-en>Versions</span></h2>
@@ -92,12 +92,12 @@ footer{color:var(--muted);font-size:13px;max-width:1080px;margin:0 auto;padding:
 <footer>Behringer, X-Touch, Allen &amp; Heath, SQ: <span data-de>Marken der jeweiligen Inhaber; dieses Projekt ist mit ihnen nicht verbunden.</span><span data-en>trademarks of their respective owners; this project is not affiliated with them.</span></footer>
 <script>
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;");
-let lang = new URLSearchParams(location.search).get("lang") || localStorage.getItem("lang") || (navigator.language.startsWith("de") ? "de" : "en");
+let lang = new URLSearchParams(location.search).get("lang") || localStorage.getItem("lang") || "en"; // English by default, German switchable
 let notes = [];
 function apply() {
   document.documentElement.lang = lang;
   document.getElementById("lang").textContent = lang === "de" ? "English" : "Deutsch";
-  document.getElementById("demo-frame").src = "demo.html" + (lang === "en" ? "?lang=en" : "");
+  document.getElementById("demo-frame").src = "demo.html?lang=" + lang;
   document.getElementById("notes").innerHTML = notes.map((n) => `<h3>${esc(n.version)} <small>${esc(n.date)}</small> – ${esc(n[lang].title)}</h3><ul>${n[lang].items.map((i) => `<li>${esc(i)}</li>`).join("")}</ul>`).join("");
 }
 document.getElementById("lang").onclick = () => { lang = lang === "de" ? "en" : "de"; localStorage.setItem("lang", lang); apply(); };

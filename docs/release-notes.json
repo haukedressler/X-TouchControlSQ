@@ -1,5 +1,25 @@
 [
  {
+  "version": "0.10.2",
+  "date": "2026-11-26",
+  "de": {
+   "title": "Neue interaktive Bedienung, Hilfe-Menü",
+   "items": [
+    "Hilfe: neue interaktive Bedienung mit der echten X-Touch-Zeichnung – jede Taste anklicken zeigt, was sie tut; Modustasten, REC (Reglerfunktion je Zug), Sends, Ebenen, Mute/PAFL/Auswahl und Szenen verhalten sich wie am Gerät; Regler mit dem Mausrad drehen.",
+    "Menü Hilfe: „Fehler melden …“ (Ticket auf GitHub) und „Downloads und Doku …“.",
+    "SoftKey-Typ 12 erkannt: PAFL Clear."
+   ]
+  },
+  "en": {
+   "title": "New interactive guide, help menu",
+   "items": [
+    "Help: new interactive guide using the real X-Touch drawing – click any key to see what it does; mode keys, REC (knob function per strip), sends, layers, mute/PAFL/selection and scenes behave like on the device; turn knobs with the mouse wheel.",
+    "Help menu: “Report an issue …” (ticket on GitHub) and “Downloads and docs …”.",
+    "SoftKey type 12 detected: PAFL Clear."
+   ]
+  }
+ },
+ {
   "version": "0.10.1",
   "date": "2026-11-26",
   "de": {
