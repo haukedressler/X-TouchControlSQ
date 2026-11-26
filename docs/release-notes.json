@@ -1,5 +1,25 @@
 [
  {
+  "version": "0.13.0",
+  "date": "2026-11-26",
+  "de": {
+   "title": "EQ auf einer Seite, Güte per Drücken und Drehen",
+   "items": [
+    "EQ auf einer Seite statt zwei: LF, LM, HM, HF – je zuerst Gain, dann Frequenz.",
+    "Güte (Q) eines Bandes: Gain-Regler gedrückt halten und drehen; das Display zeigt dabei den Q-Wert. Kurz drücken setzt den Gain wie bisher auf 0 dB.",
+    "Der Hochpass (HPF) ist nicht mehr auf der EQ-Seite – er liegt auf REC (Reglerfunktion je Zug) und auf WRITE."
+   ]
+  },
+  "en": {
+   "title": "EQ on one page, Q by push and turn",
+   "items": [
+    "EQ on one page instead of two: LF, LM, HM, HF – gain first, then frequency for each band.",
+    "Q of a band: hold the gain knob pushed and turn; the display shows the Q value meanwhile. A short push sets the gain to 0 dB as before.",
+    "The high-pass (HPF) is no longer on the EQ page – it is on REC (knob function per strip) and on WRITE."
+   ]
+  }
+ },
+ {
   "version": "0.12.6",
   "date": "2026-11-26",
   "de": {
