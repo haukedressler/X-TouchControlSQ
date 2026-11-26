@@ -1,5 +1,21 @@
 [
  {
+  "version": "0.12.5",
+  "date": "2026-11-26",
+  "de": {
+   "title": "Pegel-LEDs so schnell wie das Pult",
+   "items": [
+    "Pegel-LEDs bekommen jeden Messwert des Pults (25 pro Sekunde, vorher 15) und halten die Spitze nur noch 0,15 s – die Anzeige folgt dem Signal deutlich direkter."
+   ]
+  },
+  "en": {
+   "title": "Meter LEDs as fast as the console",
+   "items": [
+    "Meter LEDs get every console measurement (25 per second, before 15) and hold the peak only 0.15 s – the display follows the signal much more directly."
+   ]
+  }
+ },
+ {
   "version": "0.12.4",
   "date": "2026-11-26",
   "de": {
