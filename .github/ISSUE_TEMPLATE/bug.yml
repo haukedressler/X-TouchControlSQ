@@ -1,0 +1,25 @@
+name: Fehler melden / Bug report
+description: Etwas funktioniert nicht wie erwartet · Something does not work as expected
+labels: [bug]
+body:
+  - type: input
+    id: version
+    attributes: { label: "Version (oben links in der App · top left in the app)", placeholder: "0.10.1" }
+    validations: { required: true }
+  - type: dropdown
+    id: os
+    attributes: { label: "System", options: ["macOS", "Windows (Installer)", "Windows (portable)"] }
+    validations: { required: true }
+  - type: input
+    id: console
+    attributes: { label: "Pult und Firmware · Console and firmware", placeholder: "SQ5, 1.6.4" }
+  - type: textarea
+    id: what
+    attributes: { label: "Was ist passiert? · What happened?", description: "Schritte zum Nachvollziehen · Steps to reproduce" }
+    validations: { required: true }
+  - type: textarea
+    id: expected
+    attributes: { label: "Was hätte passieren sollen? · What did you expect?" }
+  - type: textarea
+    id: log
+    attributes: { label: "Log (Menü › Log-Ordner öffnen · menu › Open log folder)", render: text }

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Surface Control for SQ – X-Touch für Allen &amp; Heath SQ</title>
+<style>
+:root{--bg:#f3f2ee;--card:#fff;--ink:#1d1d1f;--muted:#5d5d63;--line:#d9d7d0;--accent:#b8730f;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root{--bg:#17181b;--card:#212226;--ink:#ececee;--muted:#a3a3aa;--line:#33343a;--accent:#ef9f27;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 var(--sans)}
+header{position:sticky;top:0;z-index:2;background:var(--card);border-bottom:1px solid var(--line);display:flex;gap:18px;align-items:center;padding:10px 20px;flex-wrap:wrap}
+header b{font-size:17px}header nav{display:flex;gap:14px;flex-wrap:wrap}header a{color:var(--muted);text-decoration:none}header a:hover{color:var(--accent)}
+#lang{margin-left:auto;font:inherit;background:none;border:1px solid var(--line);border-radius:999px;padding:3px 12px;color:var(--ink);cursor:pointer}
+main{max-width:1080px;margin:0 auto;padding:24px 20px 60px}
+h1{font-size:30px;margin:8px 0 4px;text-wrap:balance}h2{font-size:21px;margin:40px 0 10px}
+.lead{color:var(--muted);max-width:70ch;margin:0 0 18px}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;border-radius:8px;padding:9px 16px;font-weight:600;margin:0 8px 8px 0}
+.btn.ghost{background:none;color:var(--accent);border:1px solid var(--accent)}
+img.shot{width:100%;border-radius:10px;border:1px solid var(--line);display:block}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+table{border-collapse:collapse;width:100%;font-size:15px}th,td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:top}th{color:var(--muted);font-weight:600}
+code{font-size:14px}
+.notes h3{font-size:16px;margin:16px 0 2px}.notes h3 small{color:var(--muted);font-weight:400}
+iframe{width:100%;height:900px;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+[data-en]{display:none}html[lang=en] [data-de]{display:none}html[lang=en] [data-en]{display:revert}
+footer{color:var(--muted);font-size:13px;max-width:1080px;margin:0 auto;padding:0 20px 30px}
+</style>
+</head>
+<body>
+<header>
+  <b>Surface Control for SQ</b>
+  <nav>
+    <a href="#download"><span data-de>Download</span><span data-en>Download</span></a>
+    <a href="#einrichten"><span data-de>Einrichten</span><span data-en>Setup</span></a>
+    <a href="#bedienung"><span data-de>Bedienung</span><span data-en>Operation</span></a>
+    <a href="#demo">Demo</a>
+    <a href="#versionen"><span data-de>Versionen</span><span data-en>Versions</span></a>
+    <a href="https://github.com/haukedressler/X-TouchControlSQ/issues/new/choose"><span data-de>Fehler melden</span><span data-en>Report an issue</span></a>
+  </nav>
+  <button id="lang" type="button">English</button>
+</header>
+<main>
+  <h1><span data-de>Behringer X-Touch als Bedienoberfläche für Allen &amp; Heath SQ</span><span data-en>Behringer X-Touch as a control surface for Allen &amp; Heath SQ</span></h1>
+  <p class="lead"><span data-de>Motorfader, Namen und Farben vom Pult, Pegel, Mute, PAFL, Auswahl, Gain/Pan/HPF/Trim je Zug, EQ, Gate, Compressor, FX-Parameter, Sends auf Fadern, Szenen, USB-Player – alle Tasten frei belegbar. Für macOS und Windows, Deutsch und Englisch.</span><span data-en>Motor faders, names and colours from the console, meters, mute, PAFL, selection, gain/pan/HPF/trim per strip, EQ, gate, compressor, FX parameters, sends on faders, scenes, USB player – every key freely assignable. For macOS and Windows, German and English.</span></p>
+  <a class="btn" href="https://github.com/haukedressler/X-TouchControlSQ/releases/latest"><span data-de>Neueste Version herunterladen</span><span data-en>Download the latest version</span></a>
+  <a class="btn ghost" href="#demo"><span data-de>Demo ausprobieren</span><span data-en>Try the demo</span></a>
+  <p><img class="shot" data-de src="img/dashboard-de.png" alt="Dashboard"><img class="shot" data-en src="img/dashboard-en.png" alt="Dashboard"></p>
+
+  <h2 id="download">Download</h2>
+  <table>
+    <tr><th>System</th><th><span data-de>Datei</span><span data-en>File</span></th></tr>
+    <tr><td>macOS (Apple Silicon)</td><td><code>…-mac-arm64.dmg</code></td></tr>
+    <tr><td>Windows 10/11 (64 Bit)</td><td><code>…-win-x64.exe</code> <span data-de>(Installation)</span><span data-en>(installer)</span></td></tr>
+    <tr><td><span data-de>Windows ohne Installation</span><span data-en>Windows without installation</span></td><td><code>…-win-x64-portable.exe</code></td></tr>
+  </table>
+  <div class="grid" style="margin-top:14px">
+    <div class="card"><b>macOS</b><p data-de>DMG öffnen, App in „Programme“ ziehen. Die App ist noch nicht signiert: beim ersten Start in <i>Systemeinstellungen › Datenschutz &amp; Sicherheit</i> „Trotzdem öffnen“. Zugriff aufs <b>lokale Netzwerk</b> erlauben.</p><p data-en>Open the DMG, drag the app to “Applications”. The app is not signed yet: on first start choose “Open Anyway” in <i>System Settings › Privacy &amp; Security</i>. Allow access to the <b>local network</b>.</p></div>
+    <div class="card"><b>Windows</b><p data-de>Bei „Der Computer wurde durch Windows geschützt“: <i>Weitere Informationen › Trotzdem ausführen</i>.</p><p data-en>At “Windows protected your PC”: <i>More info › Run anyway</i>.</p></div>
+  </div>
+
+  <h2 id="einrichten"><span data-de>Einrichten</span><span data-en>Setup</span></h2>
+  <ol data-de>
+    <li>X-Touch per USB im <b>Mackie-Control-Modus</b> anschließen (beim Einschalten SELECT 1 halten, „MC“). Helligkeit dort mit Regler 8 (50 %).</li>
+    <li>App starten. <i>Einstellungen › Pult</i>: IP-Adresse des SQ, „Pult-Verbindung aktiv“.</li>
+    <li>Das SQ erlaubt nur <b>eine</b> MIDI-Verbindung – läuft parallel ein Stream-Deck-Plugin, „MIDI mitbenutzen“ aus lassen.</li>
+    <li>MixPad: „Follow SQ Channel Select“ und „Follow SQ Mix Select“ einschalten, dann folgt MixPad der Auswahl.</li>
+  </ol>
+  <ol data-en>
+    <li>Connect the X-Touch via USB in <b>Mackie Control mode</b> (hold SELECT 1 while switching on, “MC”). Brightness there with knob 8 (50 %).</li>
+    <li>Start the app. <i>Settings › Console</i>: IP address of the SQ, “Console connection active”.</li>
+    <li>The SQ allows only <b>one</b> MIDI connection – if a Stream Deck plugin runs at the same time, leave “Use MIDI as well” off.</li>
+    <li>MixPad: switch on “Follow SQ Channel Select” and “Follow SQ Mix Select”, then MixPad follows the selection.</li>
+  </ol>
+
+  <h2 id="bedienung"><span data-de>Bedienung</span><span data-en>Operation</span></h2>
+  <div class="grid">
+    <div class="card" data-de><b>Kanalzüge</b><ul><li>Fader, MUTE, SOLO (PAFL), SELECT – Kanaltasten frei belegbar, für alle Züge oder je Kanalart.</li><li><b>REC</b> schaltet die Funktion des Reglers über dem Zug weiter: Eingang Gain → Pan → HPF → Trim, sonst Pan. Regler drücken = Standardwert.</li><li>Display unten: Funktion; beim Drehen kurz der Wert, beim Fader kurz die dB.</li></ul></div>
+    <div class="card" data-en><b>Channel strips</b><ul><li>Faders, MUTE, SOLO (PAFL), SELECT – channel keys freely assignable, for all strips or per channel type.</li><li><b>REC</b> steps the function of the knob above the strip: input Gain → Pan → HPF → Trim, otherwise pan. Push knob = default value.</li><li>Lower display: the function; briefly the value while turning, the dB while moving a fader.</li></ul></div>
+    <div class="card" data-de><b>Modi</b><ul><li><b>Gain/Trim</b> (TRACK), <b>Pan</b>, <b>EQ</b> (gewählter Kanal), <b>Gate/Comp</b> (PLUG-IN), <b>FX</b> (INST, Effekt wird vom Pult erkannt).</li><li>F1–F8: Sends auf Fader zu Aux/FX. USER: vier eigene Ebenen.</li><li>Szenen: ▲▼ vormerken, ENTER zweimal oder ALT + ENTER.</li></ul></div>
+    <div class="card" data-en><b>Modes</b><ul><li><b>Gain/Trim</b> (TRACK), <b>Pan</b>, <b>EQ</b> (selected channel), <b>Gate/Comp</b> (PLUG-IN), <b>FX</b> (INST, effect detected from the console).</li><li>F1–F8: sends on faders to aux/FX. USER: four user layers.</li><li>Scenes: ▲▼ to preselect, ENTER twice or ALT + ENTER.</li></ul></div>
+  </div>
+  <p><img class="shot" src="img/key-assignment-de.png" alt="Tastenbelegung / key assignment"></p>
+
+  <h2 id="demo">Demo</h2>
+  <p data-de>Übungsmodell im Browser – Tasten anklicken.</p><p data-en>Practice model in the browser – click the keys.</p>
+  <iframe id="demo-frame" src="demo.html" title="Demo"></iframe>
+
+  <h2 id="versionen"><span data-de>Versionen</span><span data-en>Versions</span></h2>
+  <div class="notes" id="notes"></div>
+</main>
+<footer>Behringer, X-Touch, Allen &amp; Heath, SQ: <span data-de>Marken der jeweiligen Inhaber; dieses Projekt ist mit ihnen nicht verbunden.</span><span data-en>trademarks of their respective owners; this project is not affiliated with them.</span></footer>
+<script>
+const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;");
+let lang = new URLSearchParams(location.search).get("lang") || localStorage.getItem("lang") || (navigator.language.startsWith("de") ? "de" : "en");
+let notes = [];
+function apply() {
+  document.documentElement.lang = lang;
+  document.getElementById("lang").textContent = lang === "de" ? "English" : "Deutsch";
+  document.getElementById("demo-frame").src = "demo.html" + (lang === "en" ? "?lang=en" : "");
+  document.getElementById("notes").innerHTML = notes.map((n) => `<h3>${esc(n.version)} <small>${esc(n.date)}</small> – ${esc(n[lang].title)}</h3><ul>${n[lang].items.map((i) => `<li>${esc(i)}</li>`).join("")}</ul>`).join("");
+}
+document.getElementById("lang").onclick = () => { lang = lang === "de" ? "en" : "de"; localStorage.setItem("lang", lang); apply(); };
+fetch("release-notes.json").then((r) => r.json()).then((n) => { notes = n; apply(); }).catch(apply);
+apply();
+</script>
+</body>
+</html>

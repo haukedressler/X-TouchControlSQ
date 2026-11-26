@@ -1,0 +1,262 @@
+[
+ {
+  "version": "0.10.1",
+  "date": "2026-11-26",
+  "de": {
+   "title": "Verständlichere Tastennamen",
+   "items": [
+    "Tasten, die nur in einem Regler-Modus wirken, zeigen ihre aktuelle Wirkung (z. B. „EQ an/aus“, „Gate an/aus“, „Pad an/aus“) und sind sonst gedämpft dargestellt.",
+    "Klarere Namen: „Zurück“ (statt Mix), „Sz. laden“, „EQ flach“, „Seite ◀/▶“, „Kanal-Nr.“, „Anzeige ▸“; Modustasten nach ihrer Funktion: „Gain/Trim“ (TRACK), „Pan“, „Sends“ (SEND), „Gate/Comp“ (PLUG-IN), „FX“ (INST); feste Tasten „Std-Wert“ (CONTROL), „Freigabe“ (ALT), „keine“ (SAVE).",
+    "Jede Taste erklärt beim Darüberfahren genau, was sie tut und wie man sie bedient."
+   ]
+  },
+  "en": {
+   "title": "Clearer key names",
+   "items": [
+    "Keys that only work in one knob mode show their current effect (e.g. “EQ on/off”, “Gate on/off”, “Pad on/off”) and are dimmed otherwise.",
+    "Clearer names: “Back” (instead of Mix), “Load scene”, “EQ flat”, “Page ◀/▶”, “Chan. no.”, “Display ▸”; mode keys named after their function: “Gain/Trim” (TRACK), “Pan”, “Sends” (SEND), “Gate/Comp” (PLUG-IN), “FX” (INST); fixed keys “Default” (CONTROL), “Unlock” (ALT), “none” (SAVE).",
+    "Hovering over a key explains exactly what it does and how to use it."
+   ]
+  }
+ },
+ {
+  "version": "0.10.0",
+  "date": "2026-11-26",
+  "de": {
+   "title": "Kanaltasten frei belegbar, Reglerfunktion je Zug",
+   "items": [
+    "REC, SOLO, MUTE und SELECT der Kanalzüge sind frei belegbar (normal und mit SHIFT): eine Belegung für alle Züge, bei Bedarf abweichend je Kanalart (Eingang, FX-Return, Gruppe, Aux, Matrix, LR, DCA, FX-Send) – nie je einzelnem Kanal. Einstellungen › Tastenbelegung › Kanaltasten.",
+    "REC schaltet die Funktion des Reglers über diesem Zug weiter (SHIFT + REC zurück): Eingang Gain → Pan → HPF → Trim, übrige Kanäle Pan. Welche Funktionen dabei sind, ist je Kanalart einstellbar. Die REC-LED leuchtet, wenn der Zug nicht auf der ersten Funktion steht.",
+    "Polarität liegt nicht mehr auf REC; sie ist als Kanaltasten-Funktion wählbar und liegt beim Gain auf dem Druck des Reglers.",
+    "Regler drücken = Standardwert der aktuellen Funktion (Pan Mitte, Trim 0 dB, HPF an/aus, Gain: Polarität).",
+    "Display unten überall gleich: die Funktion (auch im PAN- und TRACK-Modus), der Wert nur beim Drehen, die dB nur beim Bewegen oder Berühren des Faders.",
+    "Neue Funktionen für freie Tasten: „Alle Regler: Funktion weiter“ und „Alle Regler: Grundfunktion“.",
+    "Sends sind keine Reglerfunktion mehr (dafür gibt es Sends auf Fader)."
+   ]
+  },
+  "en": {
+   "title": "Freely assignable channel keys, knob function per strip",
+   "items": [
+    "REC, SOLO, MUTE and SELECT of the channel strips are freely assignable (normal and with SHIFT): one assignment for all strips, if needed different per channel type (input, FX return, group, aux, matrix, LR, DCA, FX send) – never per single channel. Settings › Key assignment › Channel keys.",
+    "REC steps the function of the knob above this strip (SHIFT + REC back): input Gain → Pan → HPF → Trim, other channels pan. Which functions are included can be set per channel type. The REC LED is lit when the strip is not on its first function.",
+    "Polarity is no longer on REC; it can be chosen as a channel key function and is on the knob push for gain.",
+    "Push knob = default value of the current function (pan centre, trim 0 dB, HPF on/off, gain: polarity).",
+    "Lower display line the same everywhere: the function (also in PAN and TRACK mode), the value only while turning, the dB only while moving or touching the fader.",
+    "New functions for free keys: “All knobs: next function” and “All knobs: first function”.",
+    "Sends are no longer a knob function (use sends on faders instead)."
+   ]
+  }
+ },
+ {
+  "version": "0.9.0",
+  "date": "2026-11-26",
+  "de": {
+   "title": "Regler regeln Gain, SoftKeys und Effekte vom Pult, Deutsch/Englisch",
+   "items": [
+    "Drehregler: Standard ist jetzt Gain (Kanäle ohne Gain: Pan). Regler drücken schaltet für alle Züge weiter: Gain → Pan → FX1 → FX2 → FX3 → FX4. Polarität bzw. Pan-Mitte mit CONTROL + Drücken.",
+    "Display unten zeigt die Funktion des Reglers; beim Drehen kurz den Wert, beim Bewegen oder Berühren eines Faders kurz die dB.",
+    "Effekte werden erkannt: Die App liest aus dem Pult, welcher Effekt mit welchem Preset in FX 1–8 liegt. INST zeigt automatisch die passenden Parameter; die Handeinstellung „FX-Typ“ ist nur noch Notfall.",
+    "SoftKey-Belegung vom Pult: In der Tastenbelegung steht hinter jedem SQ-SoftKey, was er am Pult tut (z. B. „Mute Group MGr1Al“, „DCA Mute Drums“, „Tap Tempo“). Eigene Namen haben Vorrang.",
+    "Dashboard: Alle Tasten mit Funktion – auch REC, SOLO, MUTE, SELECT – tragen die Funktion in Orange; leuchtende Tasten haben einen hellen bzw. LED-farbigen Hintergrund.",
+    "Ganze App auf Deutsch und Englisch, umschaltbar unter Einstellungen › Erweitert › Sprache (Seite, Dashboard, X-Touch-Hinweise, App-Menü, Hilfe).",
+    "Versionsnummer im Kopf der Seite und im App-Menü, Versionshinweise unter Hilfe."
+   ]
+  },
+  "en": {
+   "title": "Knobs control gain, SoftKeys and effects from the console, German/English",
+   "items": [
+    "Knobs: the default is now gain (channels without gain: pan). Pushing a knob steps all strips on: Gain → Pan → FX1 → FX2 → FX3 → FX4. Polarity or pan centre with CONTROL + push.",
+    "The lower display line shows the knob's function; briefly the value while turning, briefly the dB while moving or touching a fader.",
+    "Effects are detected: the app reads from the console which effect and preset sits in FX 1–8. INST shows the matching parameters automatically; the manual “FX type” setting is only a fallback.",
+    "SoftKey assignment from the console: the key assignment shows what each SQ SoftKey does on the console (e.g. “Mute Group MGr1Al”, “DCA Mute Drums”, “Tap Tempo”). Your own names take priority.",
+    "Dashboard: every key with a function – including REC, SOLO, MUTE, SELECT – shows its function in orange; lit keys get a light or LED-coloured background.",
+    "The whole app in German and English, switchable under Settings › Advanced › Language (page, dashboard, X-Touch hints, app menu, help).",
+    "Version number in the page header and the app menu, release notes under Help."
+   ]
+  }
+ },
+ {
+  "version": "0.8.0",
+  "date": "2026-11-26",
+  "de": {
+   "title": "Tasten frei belegen, Zeichnung nach Original-Vorlage",
+   "items": [
+    "Alle Tasten der Master-Sektion frei belegbar (normal und mit SHIFT) im Reiter „Tastenbelegung“. Fest: SHIFT, CONTROL, ALT, SAVE.",
+    "Neue Funktionen: SQ-SoftKey 1–16 (tippen oder halten, eigene Namen), Tap Tempo, Mute-Gruppen und DCA-Mute mit LED, Szene direkt, REC-Reihe = Polarität.",
+    "X-Touch-Zeichnung nach der Behringer-Vorlage mit Original-Beschriftung und aktueller Funktion je Taste."
+   ]
+  },
+  "en": {
+   "title": "Freely assignable keys, drawing after the original layout",
+   "items": [
+    "All keys of the master section freely assignable (normal and with SHIFT) in the “Key assignment” tab. Fixed: SHIFT, CONTROL, ALT, SAVE.",
+    "New functions: SQ SoftKey 1–16 (tap or hold, own names), Tap Tempo, mute groups and DCA mute with LED, direct scene, REC row = polarity.",
+    "X-Touch drawing after the Behringer layout with original labels and the current function of each key."
+   ]
+  }
+ },
+ {
+  "version": "0.7.0",
+  "date": "2026-11-26",
+  "de": {
+   "title": "Neue Oberfläche: Dashboard, Einstellungen mit Reitern, Hilfe",
+   "items": [
+    "Dashboard ohne Scrollen: Live-Abbild des X-Touch, „Jetzt aktiv“, Konfiguration, Verbindung, Log.",
+    "Einstellungen in Reitern; Hilfe mit interaktiver Demo und Kurzanleitung.",
+    "Mac-App mit Dock-Symbol und App-Menü."
+   ]
+  },
+  "en": {
+   "title": "New interface: dashboard, settings with tabs, help",
+   "items": [
+    "Dashboard without scrolling: live view of the X-Touch, “Active now”, configuration, connection, log.",
+    "Settings in tabs; help with interactive demo and quick guide.",
+    "Mac app with Dock icon and app menu."
+   ]
+  }
+ },
+ {
+  "version": "0.6.1",
+  "date": "2026-11-26",
+  "de": {
+   "title": "Pegel-LEDs für FX-Returns und DCA",
+   "items": [
+    "FX-Returns zeigen den Pegel ihres FX-Sends, DCA den höchsten Pegel ihrer Mitglieder – beides abschaltbar.",
+    "Mac nur noch Apple Silicon; Windows als Installer und als portable Einzeldatei."
+   ]
+  },
+  "en": {
+   "title": "Meter LEDs for FX returns and DCA",
+   "items": [
+    "FX returns show the level of their FX send, DCAs the highest level of their members – both can be switched off.",
+    "Mac Apple Silicon only; Windows as installer and as portable single file."
+   ]
+  }
+ },
+ {
+  "version": "0.6.0",
+  "date": "2026-11-26",
+  "de": {
+   "title": "Desktop-App „Surface Control for SQ“ für macOS und Windows",
+   "items": [
+    "App mit Symbol in der Menüleiste bzw. im Infobereich: Status, Einstellungen, „Beim Anmelden starten“, Log-Ordner, Beenden.",
+    "Installer für macOS und Windows."
+   ]
+  },
+  "en": {
+   "title": "Desktop app “Surface Control for SQ” for macOS and Windows",
+   "items": [
+    "App with an icon in the menu bar or notification area: status, settings, “Start at login”, log folder, quit.",
+    "Installers for macOS and Windows."
+   ]
+  }
+ },
+ {
+  "version": "0.5.1",
+  "date": "2026-11-26",
+  "de": {
+   "title": "SELECT am X-Touch setzt die Pult-Auswahl – MixPad folgt",
+   "items": [
+    "SELECT, CHANNEL und Jog auf einem Eingang wählen ihn auch am Pult, wenn er auf der sichtbaren Pult-Ebene liegt; sonst Hinweis „PULT EBENE“."
+   ]
+  },
+  "en": {
+   "title": "SELECT on the X-Touch sets the console selection – MixPad follows",
+   "items": [
+    "SELECT, CHANNEL and jog on an input also select it on the console if it is on the visible console layer; otherwise the hint “DESK LAYER”."
+   ]
+  }
+ },
+ {
+  "version": "0.5.0",
+  "date": "2026-11-26",
+  "de": {
+   "title": "Szenen, USB-Player, Aufnahme, 48V",
+   "items": [
+    "Szenen vormerken mit ▲▼, laden mit ENTER zweimal oder ALT + ENTER.",
+    "USB-Player, Aufnahme (ALT + RECORD 1 s), 48V im TRACK-Modus (ALT + GROUP 1 s).",
+    "Große Anzeige: Auswahl, Szene, Uhrzeit."
+   ]
+  },
+  "en": {
+   "title": "Scenes, USB player, recording, 48V",
+   "items": [
+    "Preselect scenes with ▲▼, load with ENTER twice or ALT + ENTER.",
+    "USB player, recording (ALT + RECORD 1 s), 48V in TRACK mode (ALT + GROUP 1 s).",
+    "Large display: selection, scene, time."
+   ]
+  }
+ },
+ {
+  "version": "0.4.0",
+  "date": "2026-11-26",
+  "de": {
+   "title": "Drehregler-Modi, Sends auf Fader, FX-Parameter",
+   "items": [
+    "Modi TRACK (Gain/Trim), PAN, EQ, PLUG-IN (Gate/Compressor), INST (FX-Parameter).",
+    "F1–F8: Sends auf Fader zu Aux und FX, Master = Weg, Regler = Send-Pan, Drücken = Pre/Post.",
+    "Große Anzeige zeigt, was gewählt ist."
+   ]
+  },
+  "en": {
+   "title": "Knob modes, sends on faders, FX parameters",
+   "items": [
+    "Modes TRACK (gain/trim), PAN, EQ, PLUG-IN (gate/compressor), INST (FX parameters).",
+    "F1–F8: sends on faders to aux and FX, master = bus, knob = send pan, push = pre/post.",
+    "The large display shows what is selected."
+   ]
+  }
+ },
+ {
+  "version": "0.3.0",
+  "date": "2026-11-26",
+  "de": {
+   "title": "Auswahl – das Pult führt",
+   "items": [
+    "Sel am Pult → X-Touch folgt; SELECT, CHANNEL und Jog wählen am X-Touch.",
+    "„MIDI mitbenutzen“: Die App kann neben dem Stream-Deck-Plugin laufen."
+   ]
+  },
+  "en": {
+   "title": "Selection – the console leads",
+   "items": [
+    "Sel on the console → the X-Touch follows; SELECT, CHANNEL and jog select on the X-Touch.",
+    "“Use MIDI as well”: the app can run alongside the Stream Deck plugin."
+   ]
+  }
+ },
+ {
+  "version": "0.2.0",
+  "date": "2026-11-26",
+  "de": {
+   "title": "Fader, Namen, Farben, Mute, Meter, eigene Ebenen",
+   "items": [
+    "Motorfader nach der aufgedruckten Skala, Namen, Pultfarben, MUTE, Pegel-LEDs, SOLO = PAFL.",
+    "Ebenen und Bänke; vier eigene Ebenen (USER)."
+   ]
+  },
+  "en": {
+   "title": "Faders, names, colours, mute, meters, user layers",
+   "items": [
+    "Motor faders following the printed scale, names, console colours, MUTE, meter LEDs, SOLO = PAFL.",
+    "Layers and banks; four user layers (USER)."
+   ]
+  }
+ },
+ {
+  "version": "0.1.0",
+  "date": "2026-11-26",
+  "de": {
+   "title": "Grundlage",
+   "items": [
+    "Verbindung zu Pult und X-Touch, Einstellungsseite, Simulator zum Testen ohne Pult."
+   ]
+  },
+  "en": {
+   "title": "Foundation",
+   "items": [
+    "Connection to console and X-Touch, settings page, simulator for testing without a console."
+   ]
+  }
+ }
+]
