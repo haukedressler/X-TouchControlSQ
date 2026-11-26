@@ -1,5 +1,25 @@
 [
  {
+  "version": "0.11.0",
+  "date": "2026-11-26",
+  "de": {
+   "title": "Tap Tempo über das Netzwerk, EQ/Comp für Ausgänge, Mute-Gruppen",
+   "items": [
+    "Tap Tempo setzt das Tempo direkt am Pult über das Netzwerk (kein MIDI, kein SoftKey nötig); die Tap-Taste blinkt im Pult-Tempo – auch wenn am Pult oder in MixPad getippt wird. Ohne Netzwerk wie bisher per SoftKey.",
+    "EQ und Gate/Comp (Compressor) funktionieren jetzt auch für Gruppen, Aux, Matrix und LR (gewählter Kanal); Gate und HPF gibt es nur an Eingängen.",
+    "Dashboard: „Jetzt aktiv“ zeigt, in welchen Mute-Gruppen der gewählte Kanal ist."
+   ]
+  },
+  "en": {
+   "title": "Tap Tempo over the network, EQ/comp for outputs, mute groups",
+   "items": [
+    "Tap Tempo sets the tempo directly on the console over the network (no MIDI, no SoftKey needed); the Tap key flashes in the console tempo – also when tapped on the console or in MixPad. Without a network connection a SoftKey is used as before.",
+    "EQ and Gate/Comp (compressor) now also work for groups, aux, matrix and LR (selected channel); gate and HPF exist on inputs only.",
+    "Dashboard: “Active now” shows which mute groups the selected channel belongs to."
+   ]
+  }
+ },
+ {
   "version": "0.10.2",
   "date": "2026-11-26",
   "de": {
