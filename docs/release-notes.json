@@ -1,5 +1,43 @@
 [
  {
+  "version": "0.12.4",
+  "date": "2026-11-26",
+  "de": {
+   "title": "Fader springen nicht mehr zurück",
+   "items": [
+    "Behoben: Nach dem Loslassen fuhr ein Motorfader manchmal auf seine alte Stellung zurück (z. B. FX-Return oder Master), obwohl das Pult den neuen Wert hatte. Ursache: die App schickte dem X-Touch die neue Stellung nicht – es fährt dann von selbst auf den letzten Wert vom Rechner zurück."
+   ]
+  },
+  "en": {
+   "title": "Faders no longer jump back",
+   "items": [
+    "Fixed: after release a motor fader sometimes moved back to its old position (e.g. FX return or master) although the console had the new value. Cause: the app did not send the new position to the X-Touch – it then returns to the last value from the computer by itself."
+   ]
+  }
+ },
+ {
+  "version": "0.12.3",
+  "date": "2026-11-26",
+  "de": {
+   "title": "Auswahl ohne Umweg, ruhigere Fader, lebendigere Pegel",
+   "items": [
+    "SELECT am X-Touch funktioniert sofort, auch direkt nach dem Start: liegt der Eingang nicht auf der sichtbaren Pult-Ebene, schaltet die App das Pult auf die passende Ebene und wählt dann.",
+    "Motorfader springen nach dem Loslassen nicht mehr auf alte Werte zurück: Antworten des Pults, die vor der eigenen Bewegung entstanden sind, werden verworfen.",
+    "Pegel-LEDs reagieren schneller (Spitze 0,3 s statt 1 s gehalten).",
+    "Diagnose: mit „Ausführliches Protokoll“ stehen alle Fader-Werte (ein/aus) im Log."
+   ]
+  },
+  "en": {
+   "title": "Direct selection, calmer faders, livelier meters",
+   "items": [
+    "SELECT on the X-Touch works at once, also right after start: if the input is not on the visible console layer, the app switches the console to the right layer and then selects.",
+    "Motor faders no longer jump back to old values after release: console answers created before your own movement are discarded.",
+    "Meter LEDs react faster (peak held 0.3 s instead of 1 s).",
+    "Diagnostics: with “Detailed log” all fader values (in/out) are written to the log."
+   ]
+  }
+ },
+ {
   "version": "0.12.2",
   "date": "2026-11-26",
   "de": {
