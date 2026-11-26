@@ -1,5 +1,41 @@
 [
  {
+  "version": "0.12.1",
+  "date": "2026-11-26",
+  "de": {
+   "title": "Pegel-LEDs wie am Pult",
+   "items": [
+    "Die Pegel-LEDs am X-Touch folgen jetzt der Skala des SQ: 0 dB am Pult = erste gelbe LED (6 von 8), +6 dB = 7, +12 dB = rot; vorher leuchteten bei 0 dB zu wenige LEDs.",
+    "Dashboard: Pegel-LEDs in den Farben des Geräts (5 grün, 2 gelb, 1 rot)."
+   ]
+  },
+  "en": {
+   "title": "Meter LEDs like on the console",
+   "items": [
+    "The X-Touch meter LEDs now follow the SQ scale: 0 dB on the console = first yellow LED (6 of 8), +6 dB = 7, +12 dB = red; before, too few LEDs were lit at 0 dB.",
+    "Dashboard: meter LEDs in the device colours (5 green, 2 yellow, 1 red)."
+   ]
+  }
+ },
+ {
+  "version": "0.12.0",
+  "date": "2026-11-26",
+  "de": {
+   "title": "Vorlagen",
+   "items": [
+    "Neuer Reiter Einstellungen › Vorlagen: aktuellen Stand (Tastenbelegung, Kanaltasten, Reglerfunktionen, eigene Ebenen, SoftKey-Namen, Verhalten) unter einem Namen speichern, laden, umbenennen, mit dem aktuellen Stand überschreiben und löschen. Die Verbindung zu Pult und X-Touch bleibt beim Laden unverändert.",
+    "Vorlagen als Datei exportieren und importieren – zum Sichern oder Weitergeben."
+   ]
+  },
+  "en": {
+   "title": "Templates",
+   "items": [
+    "New tab Settings › Templates: save the current state (key assignment, channel keys, knob functions, user layers, SoftKey names, behaviour) under a name, load, rename, overwrite with the current state and delete. Loading leaves the connection to console and X-Touch unchanged.",
+    "Export and import templates as files – for backup or sharing."
+   ]
+  }
+ },
+ {
   "version": "0.11.0",
   "date": "2026-11-26",
   "de": {

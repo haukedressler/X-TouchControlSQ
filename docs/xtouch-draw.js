@@ -83,7 +83,7 @@
 			// Pegelkette (oben CLIP, unten SIG)
 			o += T(cx - 26, 502, "CLIP", 8.5, "#a9aab0", "middle", 600) + T(cx - 26, 676, "SIG", 8.5, "#a9aab0", "middle", 600);
 			const lv = d?.meters?.[i] ?? 0;
-			for (let s = 0; s < 8; s++) { const y = 650 - s * 19, lit = s < lv; o += R(cx - 46, y, 8, 13, lit ? (s >= 6 ? "#e24b4a" : s >= 4 ? "#ffb13d" : "#4fbf7a") : "#1b1c1f", null, 2); }
+			for (let s = 0; s < 8; s++) { const y = 650 - s * 19, lit = s < lv; o += R(cx - 46, y, 8, 13, lit ? (s >= 7 ? "#e24b4a" : s >= 5 ? "#ffd23f" : "#4fbf7a") : "#1b1c1f", null, 2); }
 			o += R(cx - 46, 490, 8, 13, d?.clip?.[i] ? "#ff3b30" : "#1b1c1f", null, 2);
 			const sx = cx + 22;
 			const SF = L?.stripFns?.[i] ?? { rec: "Regler▸", solo: "PAFL", mute: "Mute", select: "Sel" };
