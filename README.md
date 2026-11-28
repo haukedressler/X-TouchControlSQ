@@ -2,7 +2,7 @@
 
 **Use a Behringer X-Touch as a control surface for Allen & Heath SQ mixers** – macOS and Windows, English and German.
 
-[Download](https://github.com/haukedressler/X-TouchControlSQ/releases/latest) · [Documentation & interactive demo](https://haukedressler.github.io/X-TouchControlSQ/) · [Report an issue](https://github.com/haukedressler/X-TouchControlSQ/issues/new/choose)
+[Download](https://github.com/dressler-apps/X-TouchControlSQ/releases/latest) · [Documentation & interactive demo](https://dressler-apps.github.io/X-TouchControlSQ/) · [Report an issue](https://github.com/dressler-apps/X-TouchControlSQ/issues/new/choose)
 
 ![Dashboard](docs/img/dashboard-en.png)
 
@@ -21,7 +21,7 @@ Surface Control for SQ connects a **Behringer X-Touch** (Mackie Control mode, US
 
 ## Download
 
-Get the files from the **[latest release](https://github.com/haukedressler/X-TouchControlSQ/releases/latest)**:
+Get the files from the **[latest release](https://github.com/dressler-apps/X-TouchControlSQ/releases/latest)**:
 
 | System | File |
 |---|---|
@@ -41,11 +41,11 @@ Get the files from the **[latest release](https://github.com/haukedressler/X-Tou
 4. **MixPad:** switch on *Follow SQ Channel Select* and *Follow SQ Mix Select* so MixPad follows the selection.
 5. Language: *Settings › Advanced › Language*.
 
-Full operating guide and an **interactive demo** you can click through: **[documentation](https://haukedressler.github.io/X-TouchControlSQ/)**.
+Full operating guide and an **interactive demo** you can click through: **[documentation](https://dressler-apps.github.io/X-TouchControlSQ/)**.
 
 ## Bugs and feature requests
 
-Please open an **[issue](https://github.com/haukedressler/X-TouchControlSQ/issues/new/choose)** – include the version (top left in the app), your system and the console firmware. In the app: *Help › Report an issue …*.
+Please open an **[issue](https://github.com/dressler-apps/X-TouchControlSQ/issues/new/choose)** – include the version (top left in the app), your system and the console firmware. In the app: *Help › Report an issue …*.
 
 ---
 *Behringer, X-Touch, Allen & Heath and SQ are trademarks of their respective owners. This project is not affiliated with or endorsed by them.*
