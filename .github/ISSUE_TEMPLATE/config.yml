@@ -1,5 +1,8 @@
-blank_issues_enabled: true
+blank_issues_enabled: false
 contact_links:
-  - name: Documentation and interactive demo
+  - name: "❓ Frage stellen · Ask a question"
+    url: https://github.com/dressler-apps/X-TouchControlSQ/discussions/new?category=q-a
+    about: "Fragen zur Bedienung · Questions about setup and use"
+  - name: "📖 Anleitung · Manual"
     url: https://dressler-apps.github.io/X-TouchControlSQ/
-    about: How to set up and operate Surface Control for SQ
+    about: "Quick Guide und Anleitung · Quick guide and manual"

@@ -1,0 +1,11 @@
+name: "💡 Wunsch / Idee · Feature request"
+description: "Neue Funktion oder Verbesserung · An idea or improvement"
+labels: [enhancement]
+body:
+  - type: textarea
+    id: wish
+    attributes: { label: "Was wünschst du dir? · What would you like?" }
+    validations: { required: true }
+  - type: textarea
+    id: why
+    attributes: { label: "Wofür brauchst du es? · What do you need it for?" }
